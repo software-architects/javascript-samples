@@ -4,7 +4,7 @@ function Circle(r) {
 
 Circle.prototype.pi = 3.1415
 Circle.prototype.area = function() {
-	return this.pi * pi.radius * pi.radius;	
+	return this.pi * this.radius * this.radius;	
 }
 
 function run() {

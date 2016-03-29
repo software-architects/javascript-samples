@@ -7,7 +7,7 @@ function outer() {
 
 function make_function(num) {
 	function r() {
-		alert('parameter: ' + numb);
+		alert('parameter: ' + num);
 	}
 	
 	return r;	
@@ -21,6 +21,7 @@ function run() {
 	];
 	
 	for(var i = 0; i < funcs.length; i++) {
-		funcs[i]();
+		var f = funcs[i];
+		f();
 	}
 }

@@ -1,6 +1,6 @@
 function run() {
 	var callCount = 0;
-	function nested() {
+	function nested () {
 		callCount++;
 		alert('callCount: ' + callCount);		
 	}

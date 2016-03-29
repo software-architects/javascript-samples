@@ -1,4 +1,4 @@
-function myFunc() {
+function myFunc(arg1, arg2, arg3) {
 	var msg = '';
 	for (var i = 0; i < arguments.length; i++) {
 		msg += ('<div>' + arguments[i] + '</div>');
