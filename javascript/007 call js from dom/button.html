@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html>
-	<body>
-		<H1>Button Example</H1>
-		<div id="output">
-		</div>
-		
-		<button onclick="do_something(event)">Do something!</button>
-		<script src="button.js"></script>
-	</body>
-</html>
 
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+</head>
+
+<body>
+	<h1>Button Example</h1>
+	<div id="output"></div>
+	<div id="outputJQuery"></div>
+
+	<button onclick="do_something(event)">Do something!</button>
+	<button id="myButton">Do something (jQuery)!</button>
+	<script src="button.js"></script>
+</body>
+
+</html>

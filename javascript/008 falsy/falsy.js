@@ -29,6 +29,24 @@ if (NaN) {
 	output += '<div>NaN is falsy</div>';
 }
 
+var something;
+if (something == undefined) {
+	output += '<div>something == undefined is truthy</div>';
+} else {
+	output += '<div>something == undefined is falsy</div>';
+}
+
+if (5 == "5") {
+	output += '<div>5 == "5" is truthy</div>';
+} else {
+	output += '<div>5 == "5" is falsy</div>';
+}
+
+if (5 === "5") {
+	output += '<div>5 === "5" is truthy</div>';
+} else {
+	output += '<div>5 === "5" is falsy</div>';
+}
 
 var result = window.document.getElementById('result');
 result.innerHTML = output;
