@@ -4,7 +4,8 @@
   "description": "",
   "main": "Gulpfile.js",
   "scripts": {
-    "build": "gulp"
+    "build": "gulp & dotnet build",
+    "start": "dotnet run"
   },
   "author": "",
   "license": "ISC",

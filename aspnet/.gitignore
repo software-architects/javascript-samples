@@ -5,3 +5,6 @@ packages
 node_modules
 *.csproj.user
 wwwroot
+.vscode
+project.lock.json
+launchSettings.json
