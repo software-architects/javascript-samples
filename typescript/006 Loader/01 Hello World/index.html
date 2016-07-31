@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.35/system.js"></script>
+</head>
+
+<body>
+    <script>
+System.import('./main.js').then(m => {
+    m.Greeter.greet();
+});
+    </script>
+</body>
+
+</html>

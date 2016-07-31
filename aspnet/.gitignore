@@ -1,0 +1,7 @@
+.vs
+bin
+obj
+packages
+node_modules
+*.csproj.user
+wwwroot

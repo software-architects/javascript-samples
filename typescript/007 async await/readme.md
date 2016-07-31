@@ -1,0 +1,1 @@
+See `async/await` sample in [Rainer's GitHub repository](https://github.com/rstropek/Samples/tree/master/TypeScriptAsyncAwait)
