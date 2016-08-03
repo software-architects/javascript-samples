@@ -1,0 +1,50 @@
+<h2>Customer Form Demo</h2>
+
+<form (ngSubmit)="save()" #f="ngForm">
+    <div class="form-group">
+        <label for="firstName">First Name:</label>
+
+        <!--
+            Note the use of two-way data binding here with [(ngModel)]. The "name"
+            attribute must be set if we use two way data binding.
+            -->
+        <input type="text" class="form-control" id="firstName" placeholder="First Name" [(ngModel)]="customer.firstName" name="firstName">
+    </div>
+    <div class="form-group">
+        <label for="lastName">Last Name:</label>
+
+        <!-- Note that the following field is required. Check CSS to see how error indicator is added -->
+        <input type="text" class="form-control" id="lastName" placeholder="Last Name" [(ngModel)]="customer.lastName" name="lastName"
+            required minlength="2" maxlength="50" #lastNameField #lastName="ngModel">
+
+        <!-- Note how we added a name to the previous field. With that, we can do error checking -->
+        <div [hidden]="lastName.valid || lastName.pristine" class="alert alert-danger">
+            Last name is required and it has to be at least 2 characters long
+        </div>
+
+        <!-- Let's add a helper output that allows us to look at CSS classes while editing the last name -->
+        <p class="text-muted">{{lastNameField.className}}</p>
+    </div>
+    <div class="form-group">
+        <label for="revenue">Yearly Revenue:</label>
+
+        <!-- Note how we use a custom validation directive "revenue-input" -->
+        <input type="number" class="form-control" id="revenue" placeholder="Avg. yearly revenue" [(ngModel)]="customer.revenue" name="revenue"
+            revenue-input required #revenue="ngModel">
+        <div *ngIf="revenue.errors && revenue.errors.invalidRevenue" class="alert alert-danger">
+            Revenue has to be > 100
+        </div>
+    </div>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox" [(ngModel)]="customer.isActive" name="isActive"> Is active?
+        </label>
+    </div>
+    <div class="form-group">
+        <label for="customerType">Type:</label>
+        <select class="form-control" [(ngModel)]="customer.type" name="customerType">
+            <option *ngFor="let t of customerTypes" [value]="t">{{t}}</option>
+        </select>
+    </div>
+    <button type="submit" [disabled]="!f.form.valid" class="btn btn-default">Save</button>
+</form>

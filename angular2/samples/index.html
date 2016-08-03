@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <!--
+    Note that the following line is necessary for Angular's router. For details
+    see https://angular.io/docs/ts/latest/guide/router.html#!#base-href
+    -->
+  <base href="/">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Angular 2 Seed</title>
+
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+
+  <!-- Polyfill(s) for older browsers -->
+  <script src="node_modules/core-js/client/shim.min.js"></script>
+
+  <script src="node_modules/zone.js/dist/zone.js"></script>
+  <script src="node_modules/reflect-metadata/Reflect.js"></script>
+  <script src="node_modules/systemjs/dist/system.src.js"></script>
+
+  <script src="systemjs.config.js"></script>
+  <script>
+      System.import('app').catch(function(err){ console.error(err); });
+  </script>
+  <style>
+    .rsTooltip {
+      opacity: 1;
+      position: absolute;
+      background: white;
+    }
+    
+    .ng-valid[required] {
+      border-left: 15px solid green;
+    }
+    
+    .ng-invalid {
+      border-left: 15px solid red;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <my-app>Loading...</my-app>
+  </div>
+  <script src="node_modules/jquery/dist/jquery.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+</body>
+
+</html>

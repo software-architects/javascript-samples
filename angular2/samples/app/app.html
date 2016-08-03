@@ -1,0 +1,53 @@
+<nav class="navbar navbar-default" style="margin-top: 15px;">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" [routerLink]="['/home']">Samples</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Basics <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <!--
+                            Note the use of the RouterLink directive below. For details see
+                            https://angular.io/docs/ts/latest/api/router/index/RouterLink-directive.html
+                            -->
+                        <li><a routerLink="/home">Home</a></li>
+                        <li><a routerLink="/hello-world">Hello World</a></li>
+                        <li><a routerLink="/template-demo">Template</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Directives <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <!--
+                            Note the use of an expression for RouterLink below.
+                            -->
+                        <li><a [routerLink]="['/ng-' + 'for']">NgFor</a></li>
+                        <li><a routerLink="/ng-if">NgIf</a></li>
+                        <li><a routerLink="/styled-components">View encapsulation</a></li>
+                        <li><a routerLink="/tooltip">Tooltip Directive</a></li>
+                        <li><a routerLink="/pipe">Custom Pipe</a></li>
+                    </ul>
+                </li>
+                <li><a routerLink="/di">DI</a></li>
+                <li><a routerLink="/customer-form">Form</a></li>
+                <li><a routerLink="/pokemon-list">Pokemon List</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- This is how we could display a directive without the router -->
+<!--<hello-world></hello-world>-->
+
+<!-- This uses the router -->
+<router-outlet></router-outlet>
