@@ -7,6 +7,9 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 @Component({
     selector: 'my-app',
     templateUrl: 'app/app.html',
+
+    // Note that we include the HelloWorldComponent directive for demo purposes.
+    // Look at app.html to see how you could use this demo component as a directive.
     directives: [ROUTER_DIRECTIVES, HelloWorldComponent]
 })
 export class AppComponent { }

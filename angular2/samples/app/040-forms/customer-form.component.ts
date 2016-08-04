@@ -13,13 +13,17 @@ export class Customer {
 
 // Custom validation directives
 function validateRevenue(revenueControl: FormControl) { 
-    if (!revenueControl.value || parseFloat(revenueControl.value) > 100) { 
+    // Revenue has to be > 100 or empty. 
+    if (!revenueControl.value || parseFloat(revenueControl.value) > 100) {
+        
+        // Note that null means "no error" 
         return null; 
     } else {
          return { 'invalidRevenue': true }; 
     } 
 }
 
+// This custom directive demonstrates the use a a custom validator
 @Directive({ 
     selector: '[revenue-input]', 
     providers: [provide(NG_VALIDATORS, { useValue: validateRevenue, multi: true })] 

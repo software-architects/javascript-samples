@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 
+// This demo introduces things you can do in templates. For details see 
+// https://angular.io/docs/ts/latest/guide/template-syntax.html
+
 @Component({
     selector: 'template-demo',
     template: `

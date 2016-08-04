@@ -5,6 +5,7 @@ import 'rxjs/Rx';
 import { UpperLowercasePipe } from './../020-directives/upper-lowercase.pipe';
 import { Router, ActivatedRoute, ROUTER_DIRECTIVES } from '@angular/router';
 
+// The following three interface represent the data model for the components
 interface IPokemonReference {
     id: string;
     name: string;
@@ -24,6 +25,8 @@ interface IPokemonDetails {
     frontDefaultSprite: string;
 }
 
+// The following to interface represent the data model returned from the PokeAPI. For details see
+// https://pokeapi.co/docsv2/#pokemon
 interface IPokeApiListResultRow {
     url: string;
     name: string;
@@ -34,13 +37,17 @@ interface IPokeApiListResult {
     results: IPokeApiListResultRow[];
 }
 
+// The following service encapsulates data access methods for the PokeAPI.
 @Injectable()
 class PokemonService {
     private pokemonListUrl = "http://pokeapi.co/api/v2/pokemon/";
 
+    // Note the use of Angular's Http service here. For details see
+    // https://angular.io/docs/ts/latest/api/http/index/Http-class.html
     constructor(private http: Http) { }
 
     public get(page: number): Observable<IPokemonListResult> {
+        // Calculate paging
         let url = `${this.pokemonListUrl}?limit=10`;
         if (page > 1) {
             url += `&offset=${(page - 1) * 10}`;
@@ -49,6 +56,8 @@ class PokemonService {
         return this.http
             .get(url)
             .map(res => {
+                // Note that in this case we are using a TypeScript interface for typesafe access
+                // to the data that PokeAPI returned.
                 let pokeResult = (<IPokeApiListResult>res.json());
                 return {
                     count: pokeResult.count,
@@ -74,6 +83,8 @@ class PokemonService {
             })
             .map(res => {
                 let pokeResult = res.json();
+                // Note that for demonstration purposes we do not use a TypeScript interface for
+                // PokeAPI's result (in contrast to the method shown above). 
                 return {
                     id: <number>pokeResult.id,
                     name: <string>pokeResult.name,
@@ -163,6 +174,8 @@ export class PokemonDetailComponent {
     }
 }
 
+// Note that the following template has its own router-outlet. Child routes
+// will be rendered into this outlet.
 @Component({
     selector: 'pokemons',
     template: '<h2>Pokemons</h2><router-outlet></router-outlet>',
