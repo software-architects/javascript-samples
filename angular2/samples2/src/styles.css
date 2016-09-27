@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+
+.rsTooltip {
+    opacity: 1;
+    position: absolute;
+    background: white;
+}
+
+.ng-valid[required] {
+    border-left: 15px solid green;
+}
+
+.ng-invalid {
+    border-left: 15px solid red;
+}

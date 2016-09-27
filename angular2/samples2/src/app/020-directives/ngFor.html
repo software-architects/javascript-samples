@@ -1,0 +1,59 @@
+<h2>Demo for <i>NgFor</i></h2>
+<p>
+    See <a href="https://angular.io/docs/ts/latest/api/common/index/NgFor-directive.html" target="_blank">Angular reference</a> for details.
+</p>
+
+<h3>Editable list</h3>
+<ul>
+    <!-- 
+        Note the use of a template expression in style.background-color. For details
+        see https://angular.io/docs/ts/latest/guide/template-syntax.html#!#template-expressions
+    -->
+    <li *ngFor="let item of list; let i = index"
+        [style.background-color]="(i % 2 == 0) ? 'LightGray' : 'Transparent'">
+        {{i + 1}}: {{item}}
+        <span class="glyphicon glyphicon-remove" (click)="remove(i)"></span>
+    </li>
+    <li>
+        <form class="form-inline">
+            <div class="form-group">
+                <div class="input-group">
+                    <!-- 
+                        Note the use of the [...] syntax for placeholder. It tells Angular
+                        that the attribute value contains an expression that needs to be
+                        evaluated.
+
+                        Also note the (keyup.enter) event filtering. Read more about input
+                        events at https://angular.io/docs/ts/latest/guide/user-input.html
+
+                        Also note the template variable #text. We can access the input element's
+                        value when calling the print() method.
+                     -->
+                    <input #text class="form-control" type="text" [(ngModel)]="textToAdd"
+                           [placeholder]="'Text to' + ' add'" name="textToAdd"
+                           (keyup.enter)="add()" />
+
+                    <!-- 
+                        Note the use of the (...) syntax for click. It tells Angular
+                        that this is an event we want to handle using the specified expression.
+                     -->
+                    <div class="input-group-addon">
+                        <span class="glyphicon glyphicon-ok" (click)="add()"></span>
+                    </div>
+                    <div class="input-group-addon">
+                        <span class="glyphicon glyphicon-print" (click)="print(text.value)"></span>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </li>
+</ul>
+
+<h3>Alternative Syntax</h3>
+<ul>
+    <template ngFor let-item [ngForOf]="list" let-i="index">
+        <li>
+            {{i + 1}}: {{item}}
+        </li>
+    </template>
+</ul>
