@@ -9,9 +9,9 @@ import { NgIfComponent } from './020-directives/ngIf.component';
 import { TooltipComponent } from './020-directives/rsTooltip.directive';
 import { StyledComponents } from './020-directives/view-encapsulation.component';
 import { CustomPipeDemoComponent } from './020-directives/upper-lowercase.pipe';
-// import { MyComponent } from './030-depencency-injection/di.component';
-// import { CustomerFormComponent } from  './040-forms/customer-form.component';
-// import { PokemonComponent, PokemonListComponent, PokemonDetailComponent } from './050-master-detail/pokemon-list.component';
+import { MyComponent } from './030-depencency-injection/di.component';
+import { CustomerFormComponent } from  './040-forms/customer-form.component';
+import { PokemonComponent, PokemonListComponent, PokemonDetailComponent } from './050-master-detail/pokemon-list.component';
 
 // Here we setup the router config for our samples application. For details see
 // https://angular.io/docs/ts/latest/api/router/index/RouterConfig-type-alias.html
@@ -28,19 +28,19 @@ const appRoutes: Routes = [
     { path: 'styled-components', component: StyledComponents },
     { path: 'tooltip', component: TooltipComponent },
     { path: 'pipe', component: CustomPipeDemoComponent },
-    // { path: 'di', component: MyComponent },
-    // { path: 'customer-form', component: CustomerFormComponent },
-    // { path: 'pokemon-list', component: PokemonListComponent },
+    { path: 'di', component: MyComponent },
+    { path: 'customer-form', component: CustomerFormComponent },
+    { path: 'pokemon-list', component: PokemonListComponent },
 
-    // // Nested routes
-    // {
-    //     path: 'pokemon-list',
-    //     component: PokemonComponent,
-    //     children: [
-    //         { path: ':id',  component: PokemonDetailComponent },
-    //         { path: '',     component: PokemonListComponent }
-    //     ]
-    // }
+    // Nested routes
+    {
+        path: 'pokemon-list',
+        component: PokemonComponent,
+        children: [
+            { path: ':id',  component: PokemonDetailComponent },
+            { path: '',     component: PokemonListComponent }
+        ]
+    }
 ];
 
 export const appRoutingProviders: any[] = [];

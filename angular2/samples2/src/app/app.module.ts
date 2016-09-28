@@ -15,6 +15,9 @@ import { NgIfComponent } from './020-directives/ngIf.component';
 import { Tooltip, TooltipComponent } from './020-directives/rsTooltip.directive';
 import { StyledComponent1, StyledComponent2, StyledComponents } from './020-directives/view-encapsulation.component';
 import { UpperLowercasePipe, CustomPipeDemoComponent } from './020-directives/upper-lowercase.pipe';
+import { MyComponent } from './030-depencency-injection/di.component';
+import { CustomerFormComponent } from  './040-forms/customer-form.component';
+import { PokemonComponent, PokemonListComponent, PokemonDetailComponent } from './050-master-detail/pokemon-list.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,9 @@ import { UpperLowercasePipe, CustomPipeDemoComponent } from './020-directives/up
     StyledComponents,
     UpperLowercasePipe,
     CustomPipeDemoComponent,
+    MyComponent,
+    CustomerFormComponent,
+    PokemonComponent, PokemonListComponent, PokemonDetailComponent
   ],
   imports: [
     BrowserModule,
