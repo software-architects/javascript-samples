@@ -46,6 +46,14 @@ you can find more details about paging in the Pokemon Web API.
   * [textContent](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent)
   * [onclick](https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclick)
 
+* You are an experienced JavaScript developer and you finish the lab early? Try creating a second
+  version using [JQuery](https://jquery.com/) instead of plain HTML and JavaScript.
+
+* Note: The sample code contains not ECMAScript 2016 features (e.g. `let` instead of `var`).
+  In practice, you should use the latest ECMAScript language version and use a transpiler like
+  [TypeScript](typescriptlang.org) or [Babel](https://babeljs.io/) to transpile into previous 
+  versions of ECMAScript.
+
 ## Tools
 
 * Use your favorite editor to write the code. If you are not sure, try 
@@ -55,3 +63,5 @@ you can find more details about paging in the Pokemon Web API.
 
 * Check your JavaScript's quality using [JSHint](http://jshint.com/) and
   [JSLint](http://www.jslint.com/).
+
+* Practice debugging in [Chrome DevTools](https://developer.chrome.com/devtools)

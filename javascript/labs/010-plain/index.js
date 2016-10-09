@@ -1,4 +1,3 @@
-"use strict";
 /*jslint browser: true*/
 /*jslint plusplus: true */
 
@@ -6,6 +5,10 @@
 // and has created the DOM. For details see 
 // https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload
 window.onload = function () {
+    // Note that we use the function form of "use strict" here. For details
+    // see http://yuiblog.com/blog/2010/12/14/strict-mode-is-coming-to-town/
+    "use strict";
+
     // Get relevant elements in DOM by id.
     // Want to know which browsers support getElementById? Check
     // http://caniuse.com/#search=getElementbyid
@@ -42,8 +45,7 @@ window.onload = function () {
             // Parse result
             var jsonResult = JSON.parse(xhr.response);
 
-            // Selectively show/hide buttons. Note the use of '!!!' here
-            // 
+            // Selectively show/hide buttons
             prev.hidden = !jsonResult.previous;
             next.hidden = !jsonResult.next;
 
