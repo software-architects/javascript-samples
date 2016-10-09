@@ -30,6 +30,9 @@ Once you created the JavaScript class, change `index.js` so that it uses the new
 * You are an experienced JavaScript developer and you finish the lab early? Try creating a second
   version using [ECMAScript 2015 classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes) instead.
 
+* Once you added Gulp (see below), try debugging with [Chrome DevTools](https://developer.chrome.com/devtools)
+  again. Note how map-files enable source-level debugging although the JavaScript code is uglified.
+  
 
 ## Tools
 

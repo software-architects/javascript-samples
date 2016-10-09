@@ -4,7 +4,7 @@
   "description": "Simple JavaScript example demonstrating classes",
   "main": "index.js",
   "scripts": {
-    "serve": "concurrently \"npm run watch\" \"npm run ls\"",
+    "serve": "concurrently \"npm run watch\" \"npm run browse\"",
     "watch": "gulp watch",
     "browse": "lite-server",
     "test": "karma start"
