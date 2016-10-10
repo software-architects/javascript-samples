@@ -1,0 +1,16 @@
+.gameboard tr td {
+	width: 100px;
+	height: 100px;
+	border: solid black 2px;
+	font-size: 80px;
+	vertical-align: center;
+	text-align: center;
+}
+
+.red {
+	background: red;
+}
+
+.green {
+	background: green;
+}
