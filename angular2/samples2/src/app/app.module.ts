@@ -10,6 +10,7 @@ import { routing,
 import { HomeComponent } from './010-basics/home.component';
 import { HelloWorldComponent } from './010-basics/hello-world.component';
 import { TemplateDemoComponent } from './010-basics/template.component';
+import { InOutUserComponent, InputOutputComponent } from './010-basics/input-output.component';
 import { NgForComponent } from './020-directives/ngFor.component';
 import { NgIfComponent } from './020-directives/ngIf.component';
 import { TooltipDirective, TooltipComponent } from './020-directives/rsTooltip.directive';
@@ -25,6 +26,8 @@ import { PokemonComponent, PokemonListComponent, PokemonDetailComponent } from '
     HomeComponent,
     HelloWorldComponent,
     TemplateDemoComponent,
+    InputOutputComponent,
+    InOutUserComponent,
     NgForComponent,
     NgIfComponent,
     TooltipDirective,

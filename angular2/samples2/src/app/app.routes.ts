@@ -4,6 +4,7 @@ import { Routes, RouterModule }   from '@angular/router';
 import { HomeComponent } from './010-basics/home.component';
 import { HelloWorldComponent } from './010-basics/hello-world.component';
 import { TemplateDemoComponent } from './010-basics/template.component';
+import { InOutUserComponent } from './010-basics/input-output.component';
 import { NgForComponent } from './020-directives/ngFor.component';
 import { NgIfComponent } from './020-directives/ngIf.component';
 import { TooltipComponent } from './020-directives/rsTooltip.directive';
@@ -23,6 +24,7 @@ const appRoutes: Routes = [
     { path: 'hello-world', component: HelloWorldComponent },
     { path: 'home', component: HomeComponent },
     { path: 'template-demo', component: TemplateDemoComponent },
+    { path: 'input-output', component: InOutUserComponent },
     { path: 'ng-for', component: NgForComponent },
     { path: 'ng-if', component: NgIfComponent },
     { path: 'styled-components', component: StyledComponent },
