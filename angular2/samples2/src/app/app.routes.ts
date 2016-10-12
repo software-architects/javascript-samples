@@ -7,7 +7,7 @@ import { TemplateDemoComponent } from './010-basics/template.component';
 import { NgForComponent } from './020-directives/ngFor.component';
 import { NgIfComponent } from './020-directives/ngIf.component';
 import { TooltipComponent } from './020-directives/rsTooltip.directive';
-import { StyledComponents } from './020-directives/view-encapsulation.component';
+import { StyledComponent } from './020-directives/view-encapsulation.component';
 import { CustomPipeDemoComponent } from './020-directives/upper-lowercase.pipe';
 import { MyComponent } from './030-depencency-injection/di.component';
 import { CustomerFormComponent } from  './040-forms/customer-form.component';
@@ -25,7 +25,7 @@ const appRoutes: Routes = [
     { path: 'template-demo', component: TemplateDemoComponent },
     { path: 'ng-for', component: NgForComponent },
     { path: 'ng-if', component: NgIfComponent },
-    { path: 'styled-components', component: StyledComponents },
+    { path: 'styled-components', component: StyledComponent },
     { path: 'tooltip', component: TooltipComponent },
     { path: 'pipe', component: CustomPipeDemoComponent },
     { path: 'di', component: MyComponent },

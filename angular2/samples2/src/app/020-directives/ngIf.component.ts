@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'ng-for-sample',
+    selector: 'app-ng-if-sample',
     template: `
         <h2>Demo for <i>NgIf</i></h2>
         <p>
-            See <a href="https://angular.io/docs/ts/latest/api/common/index/NgIf-directive.html" target="_blank">Angular reference</a> for details.
+            See <a href="https://angular.io/docs/ts/latest/api/common/index/NgIf-directive.html" target="_blank">
+            Angular reference</a> for details.
         </p>
         <form>
             <div class="checkbox">
@@ -21,7 +22,10 @@ import { Component } from '@angular/core';
             </div>
             <!-- Note use of NgIf -->
             <p class="bg-primary" *ngIf="details.checked" style="padding: 10px;">
-                Hey, Luke! May the Force be with you. I care. So, what do you think of her, Han? You're all clear, kid. Let's blow this thing and go home! I call it luck. What good is a reward if you ain't around to use it? Besides, attacking that battle station ain't my idea of courage. It's more like…suicide.
+                Hey, Luke! May the Force be with you. I care. So, what do you think of her, Han?
+                You're all clear, kid. Let's blow this thing and go home! I call it luck. What
+                good is a reward if you ain't around to use it? Besides, attacking that battle
+                station ain't my idea of courage. It's more like…suicide.
             </p>
         </form>`
 })

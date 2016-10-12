@@ -10,6 +10,6 @@
     border-left: 15px solid green;
 }
 
-.ng-invalid {
+input.ng-invalid {
     border-left: 15px solid red;
 }

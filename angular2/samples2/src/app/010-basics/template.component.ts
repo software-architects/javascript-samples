@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
 // https://angular.io/docs/ts/latest/guide/template-syntax.html
 
 @Component({
-    selector: 'template-demo',
+    selector: 'app-template-demo',
     template: `
         <h2>Template Demo</h2>
         <p>
@@ -42,9 +42,9 @@ export class TemplateDemoComponent {
     public angularIsCool = true;
     public isAngularCool = 'Yes, Angular is cool!';
 
-    public message = "Angular is pretty cool!";
+    public message = 'Angular is pretty cool!';
 
     public sayIt(message?: string) {
-        alert(message || "Angular is cool!");
+        alert(message || 'Angular is cool!');
     }
 }

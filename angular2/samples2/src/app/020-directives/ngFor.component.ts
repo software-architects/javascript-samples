@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'ng-for-sample',
+    selector: 'app-ng-for-sample',
     templateUrl: 'ngFor.html'
 })
 export class NgForComponent {
@@ -9,8 +9,8 @@ export class NgForComponent {
     public textToAdd: string;
 
     constructor() {
-        this.list.push("Hello");
-        this.list.push("World");        
+        this.list.push('Hello');
+        this.list.push('World');
     }
 
     public remove(index: number) {
@@ -19,7 +19,7 @@ export class NgForComponent {
 
     public add() {
         this.list.push(this.textToAdd);
-        this.textToAdd = "";
+        this.textToAdd = '';
     }
 
     public print(text: string) {

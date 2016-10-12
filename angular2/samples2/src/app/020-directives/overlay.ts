@@ -5,7 +5,7 @@
 class Overlay {
     private el: HTMLElement;
     constructor() {
-        var el = document.createElement('div');
+        let el = document.createElement('div');
         el.className = 'rsTooltip';
         this.el = el;
     }
@@ -15,7 +15,7 @@ class Overlay {
     open(el: any, text: string) {
         this.el.innerHTML = text;
         this.el.hidden = false;
-        var rect = el.nativeElement.getBoundingClientRect();
+        let rect = el.nativeElement.getBoundingClientRect();
         this.el.style.left = rect.left + 5 + 'px';
         this.el.style.top = rect.top + 5 + 'px';
     }

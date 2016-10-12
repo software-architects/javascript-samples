@@ -1,4 +1,4 @@
-import { Component, Directive, HostListener, ElementRef, Input, ViewEncapsulation } from '@angular/core';
+import { Component, Directive, HostListener, ElementRef, Input } from '@angular/core';
 import Overlay from './overlay';
 
 // The following class is inspired by the following book:
@@ -6,12 +6,12 @@ import Overlay from './overlay';
 // It is a great book and I can really recommand buying it.
 
 @Directive({
-    selector: '[rsTooltip]'
+    selector: '[appRsTooltip]'
 })
-export class Tooltip {
+export class TooltipDirective {
     // For details see https://angular.io/docs/ts/latest/api/core/index/Input-var.html
-    @Input()
-    rsTooltip: string;
+    @Input('appRsTooltip')
+    appRsTooltip: string;
 
     constructor(private el: ElementRef, private overlay: Overlay) {
         // el is an Angular wrapper (for details see 
@@ -25,7 +25,7 @@ export class Tooltip {
 
     @HostListener('mouseenter')
     onMouseEnter() {
-        this.overlay.open(this.el, this.rsTooltip);
+        this.overlay.open(this.el, this.appRsTooltip);
     }
 
     @HostListener('mouseleave')
@@ -34,12 +34,12 @@ export class Tooltip {
     }
 }
 
-// The following component uses the rsTooltip. Note the use of providers
+// The following component uses the appRsTooltip. Note the use of providers
 // and directives.
 @Component({
-    selector: 'tooltip-sample',
+    selector: 'app-tooltip-sample',
     template: `<h2>Tooltip Sample</h2>
-        <button class="btn" rsTooltip="This is a test">Test</button>`,
+        <button class="btn" appRsTooltip="This is a test">Test</button>`,
     providers: [Overlay]
 })
 export class TooltipComponent {

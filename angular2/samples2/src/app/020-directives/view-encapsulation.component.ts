@@ -4,27 +4,27 @@ import { Component, ViewEncapsulation } from '@angular/core';
 // https://angular.io/docs/ts/latest/api/core/index/ViewEncapsulation-enum.html
 
 @Component({
-    selector: 'styled-component-1',
+    selector: 'app-styled-component-1',
     template: `<div class="myStyle"></div>`,
     styles: [`div.myStyle { width: 100px; height: 100px; background-color: Red; float: left; }`],
     encapsulation: ViewEncapsulation.Native
 })
-export class StyledComponent1 {
+export class Styled1Component {
 }
 
 @Component({
-    selector: 'styled-component-2',
+    selector: 'app-styled-component-2',
     template: `<div class="myStyle"></div>`,
     styles: [`div.myStyle { width: 100px; height: 100px; background-color: Green; float: left; }`],
     encapsulation: ViewEncapsulation.Native
 })
-export class StyledComponent2 {
+export class Styled2Component {
 }
 
 @Component({
-    selector: 'styled-components',
-    template: `<styled-component-1></styled-component-1><styled-component-2></styled-component-2>`
+    selector: 'app-styled-components',
+    template: `<app-styled-component-1></app-styled-component-1><app-styled-component-2></app-styled-component-2>`
 })
-export class StyledComponents {
+export class StyledComponent {
 }
 

@@ -30,7 +30,7 @@
 
         <!-- Note how we use a custom validation directive "revenue-input" -->
         <input type="number" class="form-control" id="revenue" placeholder="Avg. yearly revenue" [(ngModel)]="customer.revenue" name="revenue"
-            revenue-input required #revenue="ngModel">
+            appRevenueInput required #revenue="ngModel">
         <div *ngIf="revenue.errors && revenue.errors.invalidRevenue" class="alert alert-danger">
             Revenue has to be > 100
         </div>

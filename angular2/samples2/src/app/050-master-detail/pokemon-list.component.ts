@@ -1,8 +1,7 @@
-import { Component, Injectable } from '@angular/core';
+import { Component, Injectable, OnInit, OnDestroy } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx';
-import { UpperLowercasePipe } from './../020-directives/upper-lowercase.pipe';
 import { Router, ActivatedRoute } from '@angular/router';
 
 // The following three interface represent the data model for the components
@@ -33,14 +32,14 @@ interface IPokeApiListResultRow {
 }
 
 interface IPokeApiListResult {
-    count: number,
+    count: number;
     results: IPokeApiListResultRow[];
 }
 
 // The following service encapsulates data access methods for the PokeAPI.
 @Injectable()
 class PokemonService {
-    private pokemonListUrl = "http://pokeapi.co/api/v2/pokemon/";
+    private pokemonListUrl = 'http://pokeapi.co/api/v2/pokemon/';
 
     // Note the use of Angular's Http service here. For details see
     // https://angular.io/docs/ts/latest/api/http/index/Http-class.html
@@ -67,7 +66,7 @@ class PokemonService {
                             return {
                                 id: r.url.substring(r.url.lastIndexOf('/', r.url.length - 2) + 1, r.url.length - 1),
                                 name: r.name
-                            }
+                            };
                         })
                 };
             });
@@ -100,11 +99,11 @@ class PokemonService {
 // Note that we reference HTTP_PROVIDERS here. For details see 
 // https://angular.io/docs/ts/latest/api/http/index/HTTP_PROVIDERS-let.html
 @Component({
-    selector: 'pokemon-list',
+    selector: 'app-pokemon-list',
     templateUrl: 'pokemon-list.html',
     providers: [PokemonService]
 })
-export class PokemonListComponent {
+export class PokemonListComponent implements OnInit {
     public isLoadingList = false;
     public pokemons: IPokemonReference[];
     public currentPage = 1;
@@ -139,11 +138,11 @@ export class PokemonListComponent {
 // Note that we reference HTTP_PROVIDERS here. For details see 
 // https://angular.io/docs/ts/latest/api/http/index/HTTP_PROVIDERS-let.html
 @Component({
-    selector: 'pokemon-detail',
+    selector: 'app-pokemon-detail',
     templateUrl: 'pokemon-details.html',
     providers: [ PokemonService ]
 })
-export class PokemonDetailComponent {
+export class PokemonDetailComponent implements OnInit, OnDestroy {
     public isLoadingList = false;
     private selectedPokemonId: number;
     private sub: any;
@@ -175,7 +174,7 @@ export class PokemonDetailComponent {
 // Note that the following template has its own router-outlet. Child routes
 // will be rendered into this outlet.
 @Component({
-    selector: 'pokemons',
+    selector: 'app-pokemons',
     template: '<h2>Pokemons</h2><router-outlet></router-outlet>'
 })
 export class PokemonComponent { }

@@ -1,4 +1,4 @@
-import { Component, Injectable, Injector, Inject, OpaqueToken, ReflectiveInjector, Optional } from '@angular/core';
+import { Component, Injectable, Inject, OpaqueToken, ReflectiveInjector, Optional } from '@angular/core';
 
 // Note that we use an opaque token here. We need that because 
 // PRIORITY is not a class. For details see
@@ -18,7 +18,7 @@ class Logger {
 
 // Define an interface to make sure that all mail builders follow the same contract.
 interface IMailBuilder {
-    SendMessage(to: string, message: string) : void;
+    SendMessage(to: string, message: string): void;
 }
 
 @Injectable()
@@ -26,10 +26,10 @@ class MailBuilder implements IMailBuilder {
     // Note the use inject metadata so that Angular does not do DI based on
     // the type of the parameter. For details see
     // https://angular.io/docs/ts/latest/api/core/index/Inject-var.html
-    constructor(@Inject(PRIORITY) private priority: string, private logger: Logger) { }
+    constructor( @Inject(PRIORITY) private priority: string, private logger: Logger) { }
 
     public SendMessage(to: string, message: string) {
-        this.logger.log("Sending message...");
+        this.logger.log('Sending message...');
         console.log(`Sending ${message} to ${to} with priority ${this.priority}`);
     }
 }
@@ -38,24 +38,19 @@ class MailBuilder implements IMailBuilder {
 class MailBuilderMock implements IMailBuilder {
     // Note the optional constructor parameter. For details see
     // https://angular.io/docs/ts/latest/api/core/index/Optional-var.html
-    constructor(@Optional() private logger: Logger) { }
+    constructor( @Optional() private logger: Logger) { }
 
     public SendMessage(_: string, __: string) {
         if (this.logger) {
-            this.logger.log("Mock object called...");
+            this.logger.log('Mock object called...');
         }
 
         console.log('Just a mock object...');
     }
 }
 
-// Define a factory method that can be used with Angular's DI
-let mailBuilderFactory = (logger: Logger) => {
-    return new MailBuilderMock(logger);
-}
-
 @Component({
-    selector: 'my-component',
+    selector: 'app-my-component',
     template: `
         <h2>Demo for Dependency Injection</h2>
         <p>
@@ -70,10 +65,10 @@ let mailBuilderFactory = (logger: Logger) => {
         </button>
         `,
     providers: [
-        Logger, 
+        Logger,
         { provide: PRIORITY, useValue: 'HIGH' },
         MailBuilder
-        
+
         // Note how you could provide a factory method that Angular would use
         // to create a MailBuilder instance. 
         // { provide: MailBuilder, useFactory: mailBuilderFactory, deps: [Logger] }
@@ -82,7 +77,7 @@ let mailBuilderFactory = (logger: Logger) => {
 export class MyComponent {
     public runtimeSender: MailBuilder;
 
-    constructor(public sender: MailBuilder) { 
+    constructor(public sender: MailBuilder) {
         // Note that component receives mail sender object in constructor
         // parameters instead of creating a concrete sender implementation
         // with "new" itself.
@@ -101,7 +96,7 @@ export class MyComponent {
             // (e.g. for mock objects in unit tests). For details see
             // https://angular.io/docs/ts/latest/api/core/index/ReflectiveInjector-class.html
             let injector = ReflectiveInjector.resolveAndCreate([
-                //{ provide: Logger, useValue: { log: (_: string) => console.log("Logging mock...") } }, 
+                // { provide: Logger, useValue: { log: (_: string) => console.log('Logging mock...') } }, 
                 { provide: MailBuilder, useClass: MailBuilderMock }
             ]);
             this.runtimeSender = injector.get(MailBuilder);

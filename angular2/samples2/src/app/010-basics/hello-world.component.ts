@@ -5,9 +5,9 @@ import { Component } from '@angular/core';
 // details see https://angular.io/docs/ts/latest/guide/displaying-data.html#!#interpolation
 
 @Component({
-    selector: 'hello-world',
+    selector: 'app-hello-world',
     template: '<h2>Hello {{title}}!</h2>'
 })
 export class HelloWorldComponent {
-    public title = "World";
+    public title = 'World';
 }

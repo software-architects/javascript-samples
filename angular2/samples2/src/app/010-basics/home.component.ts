@@ -4,8 +4,8 @@ import { Component } from '@angular/core';
 // a template file is used.
 
 @Component({
-    selector: 'home',
+    selector: 'app-home',
     templateUrl: 'home.html'
 })
-export class HomeComponent { 
+export class HomeComponent {
 }
