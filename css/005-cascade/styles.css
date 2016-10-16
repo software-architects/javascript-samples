@@ -1,0 +1,22 @@
+/* Try this sample with browser's dev tools */
+
+body { 
+    font-family: Verdana, Arial, Helvetica, sans-serif; 
+} 
+
+p { 
+    color: darkblue; 
+}
+
+strong { 
+    font-size: smaller; 
+}
+
+p strong {
+    font-size: larger;
+}
+
+/* Further readings:
+   https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity
+   https://developer.mozilla.org/de/docs/Web/CSS/Cascade#Cascading_order
+*/

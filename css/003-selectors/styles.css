@@ -1,0 +1,70 @@
+/* See also http://www.w3schools.com/cssref/css_selectors.asp */
+
+/* Tag selector */
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: red;
+}
+
+/* Class selector */
+.highlight {
+    color: darkorange;
+}
+
+/* ID selector */
+#latestNote {
+    margin-left: 15px;
+    border-left: 15px solid red;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+/* Group selector (e.g. style all headings) */
+h1, h2, h3 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Descendents selector */
+p strong {
+    font-weight: bold;
+    font-size: larger;
+}
+h2 strong {
+    color: red;
+}
+#latestNote strong {
+    background: yellow; /* note how p string is applied, too */
+}
+
+/* Pseudo classes and elements
+   (see also http://www.w3schools.com/Css/css_pseudo_classes.asp)
+*/
+#latestNote:hover {
+    background: lightgrey;
+    font-size: larger;
+}
+p.hotTip:before {
+    content: "DON'T FORGET:"; 
+}
+p.hotTip:first-letter {
+    font-size: xx-large; 
+}
+label:after {
+    content: ":";
+} 
+
+/* Attribute selector */
+a[href^="http://www.timecockpit.com"] {
+    background: lightgreen;
+    color: blue;
+    text-decoration: none;
+}
+input[type="text"] {
+    padding: 5px;
+}
+
+/* Child selector */
+li:nth-child(odd) {
+    background: lightgray;
+}

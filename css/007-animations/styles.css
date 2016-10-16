@@ -1,0 +1,103 @@
+*:focus { outline: none; }
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.form_hint, .required_notification {
+    font-size: smaller;
+}
+
+.contact_form ul {
+    width: 750px;
+    list-style-type: none;
+    list-style-position: outside;
+    margin: 0px;
+    padding: 0px;
+}
+
+.contact_form li {
+    padding: 12px; 
+    border-bottom: 1px solid #eee;
+}
+
+.contact_form li:first-child, .contact_form li:last-child {
+    border-bottom: 1px solid #777;
+}
+
+.contact_form h2 {
+    display: inline;
+}
+
+.required_notification {
+    color: #d45252; 
+    margin: 5px 0 0 0;
+    float: right;
+}
+
+.contact_form label {
+    width: 150px;
+    margin-top: 3px;
+    float: left;
+    padding: 3px;
+}
+
+.contact_form input {
+    height: 20px; 
+    width: 220px; 
+    padding: 5px 8px;
+}
+
+.contact_form button {
+    margin-left:156px;
+}
+
+button.submit {
+    background-color: #68b12f;
+    border: 1px solid #509111;
+    color: white;
+    padding: 6px 20px;
+    text-align: center;
+}
+button.submit:hover {
+    opacity:.85;
+    cursor: pointer; 
+}
+
+.contact_form input:invalid {
+    box-shadow: 0 0 10px #d45252;
+}
+
+.form_hint {
+    background: #d45252;
+    border-radius: 3px 3px 3px 3px;
+    color: white;
+    margin-left:8px;
+    padding: 1px 6px;
+    z-index: 999; /* hints stay above all other elements */
+    position: absolute; /* allows proper formatting if hint is two lines */
+    display: none;
+}
+
+.form_hint::before {
+    content: "\25C0"; /* left point triangle in escaped unicode */
+    color:#d45252;
+    position: absolute;
+    top:1px;
+    left:-6px;
+}
+
+@keyframes fadeIn { 
+    from { opacity: 0; } 
+    to { opacity: 1; } 
+}
+
+.contact_form input:focus + .form_hint { 
+    display: inline;
+    animation-name: fadeIn;
+    animation-duration: 1s; 
+}
+
+.contact_form input:required:valid + .form_hint { background: #28921f; } /* change form hint color when valid */
+
+.contact_form input:required:valid + .form_hint::before { color:#28921f; } /* change form hint arrow color when valid */
