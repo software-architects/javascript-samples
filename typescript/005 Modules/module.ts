@@ -1,3 +1,5 @@
+// Learn more about modues in http://www.typescriptlang.org/docs/handbook/modules.html
+
 export class MyFirstClass {
     public greeting: string = "Hello";
 }
