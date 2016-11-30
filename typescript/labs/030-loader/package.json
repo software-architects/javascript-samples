@@ -1,0 +1,16 @@
+{
+  "name": "javascript-labs-classes",
+  "version": "1.0.0",
+  "description": "Simple JavaScript example demonstrating classes",
+  "main": "index.js",
+  "scripts": {
+    "browse": "lite-server"
+  },
+  "author": "Rainer Stropek",
+  "license": "MIT",
+  "devDependencies": {
+    "lite-server": "^2.2.2",
+    "ts-loader": "^1.2.2",
+    "typescript": "^2.0.10"
+  }
+}

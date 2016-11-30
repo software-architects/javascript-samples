@@ -1,4 +1,4 @@
-# JavaScript Introduction
+# TypeScript Introduction
 
 
 ## Your Job
@@ -30,11 +30,11 @@ you can find more details about paging in the Pokemon Web API.
 
 * Don't use any JavaScript libraries (e.g. *JQuery*, *Angular*) for this first sample.
 
-* Use a CSS framework like [Bootstrap](http://getbootstrap.com/)
+* Use a CSS framework like [Bootstrap](http://getbootstrap.com/) or
   [Material Design Lite](https://getmdl.io/styles/index.html) to make your web app look nice.
-  If you are completely new to HTML and CSS, you can skip this and focus on JavaScript.
+  If you are completely new to HTML and CSS, you can skip this and focus on TypeScript.
 
-* You are completely new to HTML, CSS and JavaScript? Here are some important functions and classes
+* You are completely new to HTML, CSS and TypeScript? Here are some important functions and classes
   you might need in your code:
   * [getElementById](https://developer.mozilla.org/en-US/docs/Web/API/Document/getElementById)
   * [window.onload](https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload)
@@ -46,13 +46,9 @@ you can find more details about paging in the Pokemon Web API.
   * [textContent](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent)
   * [onclick](https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclick)
 
-* You are an experienced JavaScript developer and you finish the lab early? Try creating a second
-  version using [JQuery](https://jquery.com/) instead of plain HTML and JavaScript.
+* You are an experienced TypeScript developer and you finish the lab early? Try creating a second
+  version using [JQuery](https://jquery.com/) instead of plain HTML and TypeScript.
 
-* Note: The sample code contains new ECMAScript 2016 features (e.g. `let` instead of `var`).
-  In practice, you should use the latest ECMAScript language version and use a transpiler like
-  [TypeScript](typescriptlang.org) or [Babel](https://babeljs.io/) to transpile into previous 
-  versions of ECMAScript.
 
 ## Tools
 
@@ -61,7 +57,6 @@ you can find more details about paging in the Pokemon Web API.
 
 * Run your web app locally using [lite-server](https://github.com/johnpapa/lite-server)
 
-* Check your JavaScript's quality using [JSHint](http://jshint.com/) and
-  [JSLint](http://www.jslint.com/).
+* Check your TypeScript's quality using [TSLint](https://palantir.github.io/tslint/).
 
 * Practice debugging in [Chrome DevTools](https://developer.chrome.com/devtools)

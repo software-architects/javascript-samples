@@ -1,0 +1,15 @@
+{
+  "name": "010-plain",
+  "version": "1.0.0",
+  "description": "Create a simple website showing a list of Pokemons.",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "lite-server": "^2.2.2",
+    "tslint": "^4.0.2",
+    "typescript": "^2.0.10"
+  },
+  "scripts": {},
+  "author": "Rainer Stropek",
+  "license": "MIT"
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Plain Implementation</title>
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- 
+        Note that this sample uses Material Design Lite. For details
+        see https://getmdl.io/styles/index.html 
+    -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="index.css">
+
+    <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.39/system.js"></script>
+    <script>
+        // set our baseURL reference path
+        SystemJS.config({
+            baseURL: '.',
+            defaultJSExtensions: true
+        });
+
+        SystemJS.import('index.js');
+    </script>
+</head>
+
+<body>
+    <h1>JavaScript Basics</h1>
+
+    <p>
+        This is a simple JavaScript sample demonstrating some basic concepts.
+    </p>
+
+    <div id="loadingIndicator" class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
+
+    <div id="pokemonList" class="mdl-list">
+    </div>
+
+    <button id="prev" class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
+        <i class="material-icons">arrow_back</i>
+    </button>
+    <button id="next" class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
+        <i class="material-icons">arrow_forward</i>
+    </button>
+</body>
+
+</html>

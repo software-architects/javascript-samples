@@ -1,2 +1,5 @@
 *.js
 typings
+!Gulpfile.js
+!webpack.config.js
+*.js.map
