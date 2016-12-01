@@ -34,3 +34,30 @@ class PokemonService {
         xhr.send();
     };
 }
+
+// Create PokemonService class ready for async/await
+class PokemonAsyncService {
+    // Some static variables
+    private static url = 'http://pokeapi.co/api/v2/pokemon/?limit=';
+    private static pageSize = 5;
+
+    public currentPage = 1;
+
+    loadPokemons(): Promise<IPokemonResult> {
+        return new Promise<IPokemonResult>((resolve, reject) => {
+            const xhr = new XMLHttpRequest();
+            xhr.addEventListener("load", () => {
+                let jsonResult = <IPokemonResult>JSON.parse(xhr.response);
+                resolve(jsonResult);
+            });
+
+            let url = PokemonAsyncService.url + PokemonAsyncService.pageSize;
+            if (this.currentPage > 1) {
+                url += "&offset=" + (this.currentPage - 1) * PokemonAsyncService.pageSize;
+            }
+
+            xhr.open('GET', url);
+            xhr.send();
+        });
+    }
+}
