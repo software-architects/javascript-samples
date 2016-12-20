@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-ng-for-sample',
-    templateUrl: 'ngFor.html'
+    templateUrl: './ngFor.html'
 })
 export class NgForComponent {
     public list: string[] = [];

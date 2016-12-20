@@ -10,19 +10,19 @@ const PRIORITY = new OpaqueToken('priority');
 // service class to be ready for injection. For details see
 // https://angular.io/docs/ts/latest/api/core/index/Injectable-decorator.html
 @Injectable()
-class Logger {
+export class Logger {
     public log(message: string) {
         console.log(message);
     }
 }
 
 // Define an interface to make sure that all mail builders follow the same contract.
-interface IMailBuilder {
+export interface IMailBuilder {
     SendMessage(to: string, message: string): void;
 }
 
 @Injectable()
-class MailBuilder implements IMailBuilder {
+export class MailBuilder implements IMailBuilder {
     // Note the use inject metadata so that Angular does not do DI based on
     // the type of the parameter. For details see
     // https://angular.io/docs/ts/latest/api/core/index/Inject-var.html
@@ -35,7 +35,7 @@ class MailBuilder implements IMailBuilder {
 }
 
 @Injectable()
-class MailBuilderMock implements IMailBuilder {
+export class MailBuilderMock implements IMailBuilder {
     // Note the optional constructor parameter. For details see
     // https://angular.io/docs/ts/latest/api/core/index/Optional-var.html
     constructor( @Optional() private logger: Logger) { }

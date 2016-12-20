@@ -32,7 +32,7 @@ export class RevenueValidatorDirective { }
 
 @Component({
     selector: 'app-customer-form',
-    templateUrl: 'customer-form.html'
+    templateUrl: './customer-form.html'
 })
 export class CustomerFormComponent {
     public customer: Customer;

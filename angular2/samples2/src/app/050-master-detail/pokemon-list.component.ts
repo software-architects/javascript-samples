@@ -5,17 +5,17 @@ import 'rxjs/Rx';
 import { Router, ActivatedRoute } from '@angular/router';
 
 // The following three interface represent the data model for the components
-interface IPokemonReference {
+export interface IPokemonReference {
     id: string;
     name: string;
 }
 
-interface IPokemonListResult {
+export interface IPokemonListResult {
     count: number;
     results: IPokemonReference[];
 }
 
-interface IPokemonDetails {
+export interface IPokemonDetails {
     id: number;
     name: string;
     baseExperience: number;
@@ -26,19 +26,19 @@ interface IPokemonDetails {
 
 // The following to interface represent the data model returned from the PokeAPI. For details see
 // https://pokeapi.co/docsv2/#pokemon
-interface IPokeApiListResultRow {
+export interface IPokeApiListResultRow {
     url: string;
     name: string;
 }
 
-interface IPokeApiListResult {
+export interface IPokeApiListResult {
     count: number;
     results: IPokeApiListResultRow[];
 }
 
 // The following service encapsulates data access methods for the PokeAPI.
 @Injectable()
-class PokemonService {
+export class PokemonService {
     private pokemonListUrl = 'http://pokeapi.co/api/v2/pokemon/';
 
     // Note the use of Angular's Http service here. For details see
@@ -100,7 +100,7 @@ class PokemonService {
 // https://angular.io/docs/ts/latest/api/http/index/HTTP_PROVIDERS-let.html
 @Component({
     selector: 'app-pokemon-list',
-    templateUrl: 'pokemon-list.html',
+    templateUrl: './pokemon-list.html',
     providers: [PokemonService]
 })
 export class PokemonListComponent implements OnInit {
@@ -139,7 +139,7 @@ export class PokemonListComponent implements OnInit {
 // https://angular.io/docs/ts/latest/api/http/index/HTTP_PROVIDERS-let.html
 @Component({
     selector: 'app-pokemon-detail',
-    templateUrl: 'pokemon-details.html',
+    templateUrl: './pokemon-details.html',
     providers: [ PokemonService ]
 })
 export class PokemonDetailComponent implements OnInit, OnDestroy {
