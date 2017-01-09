@@ -1,0 +1,19 @@
+{
+  "name": "hello-node",
+  "version": "1.0.0",
+  "description": "Sample for Node.js training",
+  "main": "app.js",
+  "scripts": {
+    "exec": "tsc && node app.js",
+    "err": "tsc && node app.js asdf.txt"
+  },
+  "author": "Rainer Stropek",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^1.1.3"
+  },
+  "devDependencies": {
+    "@types/chalk": "^0.4.31",
+    "@types/node": "^6.0.58"
+  }
+}
