@@ -4,7 +4,11 @@
   "description": "Sample for Node.js training",
   "main": "app.js",
   "scripts": {
-    "exec": "tsc && node app.js"
+    "exec": "tsc && node app.js",
+    "docker-build": "tsc && docker build -t sqlclient .",
+    "docker-sql": "docker run -e ACCEPT_EULA=Y -e SA_PASSWORD=P@ssw0rd! -d -m 4096M --name sql microsoft/mssql-server-linux",
+    "docker-run": "docker run --rm --link sql --name sqlclient sqlclient",
+    "docker-rm": "docker rm -f sql"
   },
   "author": "Rainer Stropek",
   "license": "MIT",
