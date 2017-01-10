@@ -1,0 +1,22 @@
+{
+  "name": "hello-node",
+  "version": "1.0.0",
+  "description": "Sample for Node.js training",
+  "main": "app.js",
+  "scripts": {
+    "exec": "tsc && node app.js"
+  },
+  "author": "Rainer Stropek",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.1",
+    "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "@types/body-parser": "0.0.33",
+    "@types/cors": "^2.8.0",
+    "@types/express": "^4.0.34",
+    "@types/node": "^6.0.58"
+  }
+}

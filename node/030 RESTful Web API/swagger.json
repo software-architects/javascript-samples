@@ -1,0 +1,80 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "v1",
+        "title": "Demo Customer API",
+        "description": "RESTful Web API Demo for Trainings",
+        "termsOfService": "TBD"
+    },
+    "basePath": "/",
+    "paths": {
+        "/customers": {
+            "post": {
+                "operationId": "AddCustomer",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "Customer data",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Customer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Created",
+                        "schema": {
+                            "$ref": "#/definitions/Customer"
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid body"
+                    }
+                }
+            },
+            "get": {
+                "operationId": "GetAllCustomers",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Customer"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Customer": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "number",
+                    "description": "Customer ID"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Customer Name"
+                }
+            }
+        }
+    }
+}
