@@ -145,3 +145,5 @@ function divAsyncPromise(x: number, y: number, callback: (err: any, msg: string)
 
 divAsyncPromise(84, 2, (_, msg) => console.log(msg));
 divAsyncPromise(84, 2).then(msg => console.log(msg));
+
+// Also look at promisify-node: https://www.npmjs.com/package/promisify-node
