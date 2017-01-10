@@ -74,6 +74,7 @@ window.onload = function () {
         });
 
         // Build URL
+        // url = 'http://localhost:1337/pokemons?limit=' + pageSize;
         url = 'http://pokeapi.co/api/v2/pokemon/?limit=' + pageSize;
         if (currentPage > 1) {
             url += "&offset=" + (currentPage - 1) * pageSize;
