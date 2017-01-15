@@ -12,7 +12,7 @@ export class Customer {
 }
 
 // Custom validation directives
-function validateRevenue(revenueControl: FormControl) {
+export function validateRevenue(revenueControl: FormControl) {
     // Revenue has to be > 100 or empty. 
     if (!revenueControl.value || parseFloat(revenueControl.value) > 100) {
 

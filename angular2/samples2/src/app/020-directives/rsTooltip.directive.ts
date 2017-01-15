@@ -1,5 +1,5 @@
 import { Component, Directive, HostListener, ElementRef, Input } from '@angular/core';
-import Overlay from './overlay';
+import { Overlay } from './overlay';
 
 // The following class is inspired by the following book:
 // Gechev, Minko. Switching to Angular 2. Packt Publishing.
@@ -40,7 +40,7 @@ export class TooltipDirective {
     selector: 'app-tooltip-sample',
     template: `<h2>Tooltip Sample</h2>
         <button class="btn" appRsTooltip="This is a test">Test</button>`,
-    providers: [Overlay]
+    providers: []
 })
 export class TooltipComponent {
 }

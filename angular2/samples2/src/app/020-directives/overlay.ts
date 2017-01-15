@@ -1,8 +1,10 @@
 // The following class is based on the following book: 
 // Gechev, Minko. Switching to Angular 2. Packt Publishing.
 // It is a great book and I can really recommand buying it.
+import { Injectable } from '@angular/core';
 
-class Overlay {
+@Injectable()
+export class Overlay {
     private el: HTMLElement;
     constructor() {
         let el = document.createElement('div');
@@ -26,5 +28,3 @@ class Overlay {
         this.el.parentNode.removeChild(this.el);
     }
 }
-
-export default Overlay;
