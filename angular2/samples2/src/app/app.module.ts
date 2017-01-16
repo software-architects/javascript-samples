@@ -24,6 +24,7 @@ import { PokemonComponent, PokemonListComponent, PokemonDetailComponent } from '
 import { Overlay } from './020-directives/overlay';
 import { ObservablesComponent } from './060-observables/observables.component';
 import { CustomerRxFormComponent } from './040-forms/customer-rx-form.component';
+import { DemoModule } from './070-module/demo-module.module';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { CustomerRxFormComponent } from './040-forms/customer-rx-form.component'
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
+    DemoModule,
     routing
   ],
   providers: [
