@@ -23,6 +23,7 @@ import { CustomerFormComponent, RevenueValidatorDirective } from './040-forms/cu
 import { PokemonComponent, PokemonListComponent, PokemonDetailComponent } from './050-master-detail/pokemon-list.component';
 import { Overlay } from './020-directives/overlay';
 import { ObservablesComponent } from './060-observables/observables.component';
+import { CustomerRxFormComponent } from './040-forms/customer-rx-form.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { ObservablesComponent } from './060-observables/observables.component';
     RevenueValidatorDirective,
     CustomerFormComponent,
     PokemonComponent, PokemonListComponent, PokemonDetailComponent,
-    ObservablesComponent
+    ObservablesComponent,
+    CustomerRxFormComponent
   ],
   imports: [
     BrowserModule,

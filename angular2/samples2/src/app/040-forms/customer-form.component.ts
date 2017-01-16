@@ -1,5 +1,5 @@
-import { Component, Injectable, Directive } from '@angular/core';
-import { NG_VALIDATORS, FormControl } from '@angular/forms';
+import { Component, Injectable, Directive, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { NG_VALIDATORS, FormControl, ValidatorFn, AbstractControl, Validator } from '@angular/forms';
 
 @Injectable()
 export class Customer {
@@ -12,23 +12,29 @@ export class Customer {
 }
 
 // Custom validation directives
-export function validateRevenue(revenueControl: FormControl) {
-    // Revenue has to be > 100 or empty. 
-    if (!revenueControl.value || parseFloat(revenueControl.value) > 100) {
+export function validateRevenue(): ValidatorFn {
+    return (control: AbstractControl): { [key: string]: any } => {
+        // Revenue has to be > 100 or empty. 
+        if (!control.value || parseFloat(control.value) > 100) {
 
-        // Note that null means "no error" 
-        return null;
-    } else {
-        return { 'invalidRevenue': true };
-    }
+            // Note that null means "no error" 
+            return null;
+        } else {
+            return { 'invalidRevenue': true };
+        }
+    };
 }
 
 // This custom directive demonstrates the use a a custom validator
 @Directive({
     selector: '[appRevenueInput]',
-    providers: [{ provide: NG_VALIDATORS, useExisting: validateRevenue, multi: true }]
+    providers: [{ provide: NG_VALIDATORS, useExisting: RevenueValidatorDirective, multi: true }]
 })
-export class RevenueValidatorDirective { }
+export class RevenueValidatorDirective implements Validator {
+    validate(control: AbstractControl): { [key: string]: any } {
+        return validateRevenue()(control);
+    }
+}
 
 @Component({
     selector: 'app-customer-form',

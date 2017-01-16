@@ -14,6 +14,7 @@ import { MyComponent } from './030-depencency-injection/di.component';
 import { CustomerFormComponent } from  './040-forms/customer-form.component';
 import { PokemonComponent, PokemonListComponent, PokemonDetailComponent } from './050-master-detail/pokemon-list.component';
 import { ObservablesComponent } from  './060-observables/observables.component';
+import { CustomerRxFormComponent } from  './040-forms/customer-rx-form.component';
 
 // Here we setup the router config for our samples application. For details see
 // https://angular.io/docs/ts/latest/api/router/index/RouterConfig-type-alias.html
@@ -33,6 +34,7 @@ const appRoutes: Routes = [
     { path: 'pipe', component: CustomPipeDemoComponent },
     { path: 'di', component: MyComponent },
     { path: 'customer-form', component: CustomerFormComponent },
+    { path: 'customer-rx-form', component: CustomerRxFormComponent },
     { path: 'pokemon-list', component: PokemonListComponent },
 
     // Nested routes
