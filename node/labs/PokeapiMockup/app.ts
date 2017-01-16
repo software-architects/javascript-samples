@@ -99,7 +99,7 @@ app.get("/pokemons", (req, res) => {
             }
         }
 
-        let url = `http://${req.header("host")}/pokemon?limit=${limit}`;
+        let url = `http://${req.header("host")}/pokemons?limit=${limit}`;
 
         const result: IPokemonListResult = {
             count: pokemons.length,
@@ -114,6 +114,32 @@ app.get("/pokemons", (req, res) => {
 
         res.status(200).send(result);
     }, 250);
+});
+
+app.get("/pokesearch", (req, res) => {
+    // Simulate some processing time 
+    setTimeout(() => {
+        if (req.query.name) {
+            const result = pokemons.filter(p => p.name.startsWith(req.query.name));
+            res.status(200).send(result);
+        } else {
+            // Stream results
+            res.header("Content-Type", "application/json")
+            res.write("[");
+            res.write(JSON.stringify({ name: 'dummy', url: 'dummy'}));
+            res.write(",");
+
+            // Simulate some processing time for other result rows
+            setTimeout(() => {
+                const result = JSON.stringify(pokemons);
+                res.write(result.substring(1, result.length - 1));
+                res.write("]");
+                res.status(200);
+                res.end();
+            }, 500);
+
+        }
+    }, 500);
 });
 
 app.listen(port, () => {
