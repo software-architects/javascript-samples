@@ -13,6 +13,7 @@ import { CustomPipeDemoComponent } from './020-directives/upper-lowercase.pipe';
 import { MyComponent } from './030-depencency-injection/di.component';
 import { CustomerFormComponent } from  './040-forms/customer-form.component';
 import { PokemonComponent, PokemonListComponent, PokemonDetailComponent } from './050-master-detail/pokemon-list.component';
+import { ObservablesComponent } from  './060-observables/observables.component';
 
 // Here we setup the router config for our samples application. For details see
 // https://angular.io/docs/ts/latest/api/router/index/RouterConfig-type-alias.html
@@ -42,7 +43,8 @@ const appRoutes: Routes = [
             { path: ':id',  component: PokemonDetailComponent },
             { path: '',     component: PokemonListComponent }
         ]
-    }
+    },
+    { path: 'observables', component: ObservablesComponent }    
 ];
 
 export const appRoutingProviders: any[] = [];
