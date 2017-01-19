@@ -15,6 +15,7 @@ import { CustomerFormComponent } from  './040-forms/customer-form.component';
 import { PokemonComponent, PokemonListComponent, PokemonDetailComponent } from './050-master-detail/pokemon-list.component';
 import { ObservablesComponent } from  './060-observables/observables.component';
 import { CustomerRxFormComponent } from  './040-forms/customer-rx-form.component';
+import { TicTacToeComponent } from './010-basics/tictactoe.component';
 
 // Here we setup the router config for our samples application. For details see
 // https://angular.io/docs/ts/latest/api/router/index/RouterConfig-type-alias.html
@@ -27,6 +28,7 @@ const appRoutes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'template-demo', component: TemplateDemoComponent },
     { path: 'input-output', component: InOutUserComponent },
+    { path: 'tictactoe', component: TicTacToeComponent },
     { path: 'ng-for', component: NgForComponent },
     { path: 'ng-if', component: NgIfComponent },
     { path: 'styled-components', component: StyledComponent },

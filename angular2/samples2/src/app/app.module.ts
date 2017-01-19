@@ -25,6 +25,7 @@ import { Overlay } from './020-directives/overlay';
 import { ObservablesComponent } from './060-observables/observables.component';
 import { CustomerRxFormComponent } from './040-forms/customer-rx-form.component';
 import { DemoModule } from './070-module/demo-module.module';
+import { TicTacToeComponent } from './010-basics/tictactoe.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { DemoModule } from './070-module/demo-module.module';
     CustomerFormComponent,
     PokemonComponent, PokemonListComponent, PokemonDetailComponent,
     ObservablesComponent,
-    CustomerRxFormComponent
+    CustomerRxFormComponent,
+    TicTacToeComponent
   ],
   imports: [
     BrowserModule,
