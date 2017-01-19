@@ -59,3 +59,13 @@ Implement a RESTful Web API with Node.js that can detect a winner in a 3 x 3 tic
 
 * Use the NPM package `request` to do web api requests in your unit tests.
 
+## Your Final Task
+
+* Implement a frontend using Angular 2. It should look something like this:<br/>
+  ![Tic Tac Toe](images/new-game.png)
+
+* Players should do their moves one after the other. If player 1 has one cell, it should turn blue. The cells of player 2 should be red.
+
+* Use the web api you implemented before to detect whether there is a winner. If there is a winner, show a message and allow the players to restart the game.<br/>
+  ![Tic Tac Toe Winner](images/winner.png)
+
