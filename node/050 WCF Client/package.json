@@ -1,0 +1,16 @@
+{
+  "name": "wcf",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "soap": "^0.18.0"
+  },
+  "devDependencies": {
+    "@types/soap": "0.0.31"
+  }
+}
