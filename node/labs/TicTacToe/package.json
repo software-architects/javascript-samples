@@ -1,0 +1,27 @@
+{
+  "name": "hello-node",
+  "version": "1.0.0",
+  "description": "Sample for Node.js training",
+  "main": "app.js",
+  "scripts": {
+    "exec": "node_modules\\.bin\\tsc && node app.js",
+    "test": "node_modules\\.bin\\tsc && node_modules\\.bin\\jasmine JASMINE_CONFIG_PATH=spec/config/jasmine.json"
+  },
+  "author": "Rainer Stropek",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "jasmine": "^2.5.3",
+    "request": "^2.79.0"
+  },
+  "devDependencies": {
+    "@types/body-parser": "0.0.33",
+    "@types/cors": "^2.8.0",
+    "@types/express": "^4.0.34",
+    "@types/jasmine": "^2.5.41",
+    "@types/node": "^6.0.58",
+    "@types/request": "0.0.39"
+  }
+}

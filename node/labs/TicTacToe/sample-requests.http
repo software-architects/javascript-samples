@@ -1,0 +1,38 @@
+=== Player 1 is winner
+
+POST http://127.0.0.1:1337/checkForWinner HTTP/1.1
+content-type: application/json
+
+[ 0, 0, 0, 1, 1, 1, 2, 2, 0 ]
+
+=== No winner
+
+POST http://127.0.0.1:1337/checkForWinner HTTP/1.1
+content-type: application/json
+
+[ 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+
+=== Player 1 is winner
+
+POST http://127.0.0.1:1337/checkForWinner HTTP/1.1
+content-type: application/json
+
+[ 1, 0, 0, 0, 1, 0, 0, 0, 1 ]
+
+=== Invalid board
+
+POST http://127.0.0.1:1337/checkForWinner HTTP/1.1
+content-type: application/json
+
+[ 1, 0, 0, 0, 1, 0, 0, 0 ]
+
+=== Invalid board
+
+POST http://127.0.0.1:1337/checkForWinner HTTP/1.1
+content-type: application/json
+
+{ "dummy": "Foo Bar" }
+
+=== Invalid board
+
+POST http://127.0.0.1:1337/checkForWinner HTTP/1.1
