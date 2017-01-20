@@ -1,0 +1,13 @@
+{
+  "name": "tictactoewinner",
+  "version": "0.2.1",
+  "description": "Get winning player on a Tic Tac Toe board",
+  "keywords": [ "TicTacToe", "Training", "Demo" ],
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "scripts": { },
+  "author": "Rainer Stropek",
+  "license": "MIT",
+  "dependencies": { },
+  "devDependencies": { }
+}
