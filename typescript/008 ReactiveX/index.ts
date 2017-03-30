@@ -1,4 +1,4 @@
-import * as Rx from 'rxjs/Rx';
+import * as Rx from '@reactivex/rxjs';
 
 // The basics
 (function () {
@@ -27,11 +27,10 @@ import * as Rx from 'rxjs/Rx';
 (function () {
     let counter = 0;
     const button = document.querySelector("button");
-    console.log(button);
     Rx.Observable.fromEvent(button, "click")
         //.debounceTime(250)
         .subscribe(() => console.log(`Clicked button ${++counter} times...`));
-}); //();
+})();
 
 // Samples for creating observables
 (function () {

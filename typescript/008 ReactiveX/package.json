@@ -3,10 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-  },
+  "scripts": {},
   "dependencies": {
-    "rxjs": "^5.2.0"
+    "@reactivex/rxjs": "^5.2.0"
   },
   "devDependencies": {
     "ts-loader": "^2.0.3",
