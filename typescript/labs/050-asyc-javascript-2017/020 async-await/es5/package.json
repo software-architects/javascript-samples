@@ -1,0 +1,13 @@
+{
+  "name": "es5",
+  "version": "1.0.0",
+  "description": "",
+  "main": "promises-intro.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^7.0.12"
+  },
+  "scripts": { },
+  "author": "Rainer Stropek",
+  "license": "MIT"
+}
