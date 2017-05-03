@@ -9,8 +9,8 @@
   "author": "Rainer Stropek",
   "license": "MIT",
   "devDependencies": {
-    "lite-server": "^2.2.2",
-    "ts-loader": "^1.2.2",
-    "typescript": "^2.0.10"
+    "lite-server": "^2.3.0",
+    "ts-loader": "^1.3.3",
+    "typescript": "^2.3.2"
   }
 }
