@@ -1,0 +1,28 @@
+<p class="bg-info" *ngIf="isLoadingList" style="padding: 15px;">
+    We are loading Pokemon list, please be patient...
+</p>
+
+<div *ngIf="!isLoadingList">
+    <nav>
+        <ul class="pager">
+            <li class="previous" [class.disabled]="currentPage == 1"><a (click)="paging(-1)">Previous</a></li>
+            <li class="next" [class.disabled]="currentPage == numberOfPages"><a (click)="paging(1)">Next</a></li>
+        </ul>
+    </nav>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of pokemons">
+                <td>{{p.id}}</td>
+                <td>{{p.name | appUpperLowercase}}</td>
+                <td><a (click)="details(p.id)">Show me details</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

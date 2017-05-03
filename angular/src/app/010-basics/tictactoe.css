@@ -1,0 +1,13 @@
+td.player1 {
+    background-color: blue;
+}
+
+td.player2 {
+    background-color: red;
+}
+
+td {
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+}
