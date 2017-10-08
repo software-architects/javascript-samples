@@ -2,7 +2,7 @@ import * as express from "express";
 import * as cors from "cors";
 import * as bodyParser from "body-parser";
 
-const port: number = process.env.port || 1337;
+const port: number = parseInt(process.env.port) || 1337;
 
 const app = express();
 app.use(cors());
