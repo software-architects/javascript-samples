@@ -1,11 +1,11 @@
 import { Component, Injectable, Inject, OpaqueToken, ReflectiveInjector, Optional } from '@angular/core';
 
-// Note that we use an opaque token here. We need that because 
+// Note that we use an opaque token here. We need that because
 // PRIORITY is not a class. For details see
 // https://angular.io/docs/ts/latest/api/core/index/OpaqueToken-class.html
 const PRIORITY = new OpaqueToken('priority');
 
-// Note the use of Injectable here. It marks a class as available to an 
+// Note the use of Injectable here. It marks a class as available to an
 // injector for instantiation. Best practice: Add Injectable to every
 // service class to be ready for injection. For details see
 // https://angular.io/docs/ts/latest/api/core/index/Injectable-decorator.html
@@ -70,7 +70,7 @@ export class MailBuilderMock implements IMailBuilder {
         MailBuilder
 
         // Note how you could provide a factory method that Angular would use
-        // to create a MailBuilder instance. 
+        // to create a MailBuilder instance.
         // { provide: MailBuilder, useFactory: mailBuilderFactory, deps: [Logger] }
     ]
 })
@@ -92,11 +92,11 @@ export class MyComponent {
         if (!this.runtimeSender) {
             // This code demonstrates how to explicity create an injector
 
-            // Note how we provide a different implementation of MailBuilder 
+            // Note how we provide a different implementation of MailBuilder
             // (e.g. for mock objects in unit tests). For details see
             // https://angular.io/docs/ts/latest/api/core/index/ReflectiveInjector-class.html
-            let injector = ReflectiveInjector.resolveAndCreate([
-                // { provide: Logger, useValue: { log: (_: string) => console.log('Logging mock...') } }, 
+            const injector = ReflectiveInjector.resolveAndCreate([
+                // { provide: Logger, useValue: { log: (_: string) => console.log('Logging mock...') } },
                 { provide: MailBuilder, useClass: MailBuilderMock }
             ]);
             this.runtimeSender = injector.get(MailBuilder);

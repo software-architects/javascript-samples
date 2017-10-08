@@ -1,21 +1,21 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
-// This demo introduces things you can do in templates. For details see 
+// This demo introduces things you can do in templates. For details see
 // https://angular.io/docs/ts/latest/guide/template-syntax.html
 
 @Component({
-    selector: 'app-template-demo',
-    template: `
+  selector: 'app-template-demo',
+  template: `
         <h2>Template Demo</h2>
         <p>
-            This demo introduces things you can do in templates. For details see 
+            This demo introduces things you can do in templates. For details see
             <a href="https://angular.io/docs/ts/latest/guide/template-syntax.html" target="_blank">Angular documentation</a>.
         </p>
         <ul>
             <li>Interpolation: {{ isAngularCool }}</li>
             <li>One way (component to view): <button [disabled]="angularIsCool" class="btn">Add scope</button></li>
             <li>
-                One way to directive property: 
+                One way to directive property:
                 <div [ngClass]="{'bg-primary': angularIsCool}" style="padding: 5px;">Angular is cool</div>
             </li>
             <li>Event binding: <button (click)="sayIt()" class="btn">Say it</button></li>

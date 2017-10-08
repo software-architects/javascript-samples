@@ -14,7 +14,7 @@ export class TooltipDirective {
     appRsTooltip: string;
 
     constructor(private el: ElementRef, private overlay: Overlay) {
-        // el is an Angular wrapper (for details see 
+        // el is an Angular wrapper (for details see
         // https://angular.io/docs/ts/latest/api/core/index/ElementRef-class.html)
         this.overlay.attach(el.nativeElement);
     }
@@ -39,7 +39,7 @@ export class TooltipDirective {
 @Component({
     selector: 'app-tooltip-sample',
     template: `<h2>Tooltip Sample</h2>
-        <button class="btn" appRsTooltip="This is a test">Test</button>`,
+    <button class="btn" appRsTooltip="This is a test">Test</button>`,
     providers: []
 })
 export class TooltipComponent {

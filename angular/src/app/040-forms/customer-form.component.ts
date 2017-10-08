@@ -14,10 +14,10 @@ export class Customer {
 // Custom validation directives
 export function validateRevenue(): ValidatorFn {
     return (control: AbstractControl): { [key: string]: any } => {
-        // Revenue has to be > 100 or empty. 
+        // Revenue has to be > 100 or empty.
         if (!control.value || parseFloat(control.value) > 100) {
 
-            // Note that null means "no error" 
+            // Note that null means "no error"
             return null;
         } else {
             return { 'invalidRevenue': true };

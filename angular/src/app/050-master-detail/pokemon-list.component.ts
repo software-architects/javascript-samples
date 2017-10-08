@@ -39,7 +39,7 @@ export interface IPokeApiListResult {
 // The following service encapsulates data access methods for the PokeAPI.
 @Injectable()
 export class PokemonService {
-    private pokemonListUrl = 'http://pokeapi.co/api/v2/pokemon/';
+    private pokemonListUrl = 'https://pokeapi.co/api/v2/pokemon/';
 
     // Note the use of Angular's Http service here. For details see
     // https://angular.io/docs/ts/latest/api/http/index/Http-class.html
@@ -57,7 +57,7 @@ export class PokemonService {
             .map(res => {
                 // Note that in this case we are using a TypeScript interface for typesafe access
                 // to the data that PokeAPI returned.
-                let pokeResult = (<IPokeApiListResult>res.json());
+                const pokeResult = (<IPokeApiListResult>res.json());
                 return {
                     count: pokeResult.count,
                     results:
@@ -73,7 +73,7 @@ export class PokemonService {
     }
 
     public getDetails(id: number): Observable<IPokemonDetails> {
-        let url = `${this.pokemonListUrl}${id}/`;
+        const url = `${this.pokemonListUrl}${id}/`;
         return this.http
             .get(url)
             .catch((err, c) => {
@@ -81,9 +81,9 @@ export class PokemonService {
                 return c;
             })
             .map(res => {
-                let pokeResult = res.json();
+                const pokeResult = res.json();
                 // Note that for demonstration purposes we do not use a TypeScript interface for
-                // PokeAPI's result (in contrast to the method shown above). 
+                // PokeAPI's result (in contrast to the method shown above).
                 return {
                     id: <number>pokeResult.id,
                     name: <string>pokeResult.name,
@@ -96,7 +96,7 @@ export class PokemonService {
     }
 }
 
-// Note that we reference HTTP_PROVIDERS here. For details see 
+// Note that we reference HTTP_PROVIDERS here. For details see
 // https://angular.io/docs/ts/latest/api/http/index/HTTP_PROVIDERS-let.html
 @Component({
     selector: 'app-pokemon-list',
@@ -135,7 +135,7 @@ export class PokemonListComponent implements OnInit {
     }
 }
 
-// Note that we reference HTTP_PROVIDERS here. For details see 
+// Note that we reference HTTP_PROVIDERS here. For details see
 // https://angular.io/docs/ts/latest/api/http/index/HTTP_PROVIDERS-let.html
 @Component({
     selector: 'app-pokemon-detail',

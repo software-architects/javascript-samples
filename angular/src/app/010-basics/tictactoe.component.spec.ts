@@ -21,6 +21,6 @@ describe('Tic Tac Toe Component', () => {
         fixture = TestBed.createComponent(TicTacToeComponent);
         comp = fixture.componentInstance;
 
-        board = fixture.debugElement.query(By.css("board-table"));
+        board = fixture.debugElement.query(By.css('board-table'));
     });
 });

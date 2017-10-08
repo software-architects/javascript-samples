@@ -21,7 +21,7 @@ export class TicTacToeComponent {
             this.board[rowIndex][colIndex] = this.currentPlayer;
             this.currentPlayer = (this.currentPlayer === 1) ? 2 : 1;
 
-            this.http.post("http://localhost:1337/checkForWinner", this.board[0].concat(this.board[1]).concat(this.board[2]))
+            this.http.post('http://localhost:1337/checkForWinner', this.board[0].concat(this.board[1]).concat(this.board[2]))
                 .forEach(res => {
                     if (res.status === 200) {
                         this.winner = res.json().winner;
