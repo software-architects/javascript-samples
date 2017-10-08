@@ -1,21 +1,23 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { InternationalizationComponent } from './080-i18n/i18n.component';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 
-import { HomeComponent } from './010-basics/home.component';
-import { HelloWorldComponent } from './010-basics/hello-world.component';
-import { TemplateDemoComponent } from './010-basics/template.component';
-import { InOutUserComponent } from './010-basics/input-output.component';
-import { NgForComponent } from './020-directives/ngFor.component';
-import { NgIfComponent } from './020-directives/ngIf.component';
-import { TooltipComponent } from './020-directives/rsTooltip.directive';
-import { StyledComponent } from './020-directives/view-encapsulation.component';
-import { CustomPipeDemoComponent } from './020-directives/upper-lowercase.pipe';
-import { MyComponent } from './030-depencency-injection/di.component';
-import { CustomerFormComponent } from './040-forms/customer-form.component';
-import { PokemonComponent, PokemonListComponent, PokemonDetailComponent } from './050-master-detail/pokemon-list.component';
-import { ObservablesComponent } from './060-observables/observables.component';
-import { CustomerRxFormComponent } from './040-forms/customer-rx-form.component';
-import { TicTacToeComponent } from './010-basics/tictactoe.component';
+import {HelloWorldComponent} from './010-basics/hello-world.component';
+import {HomeComponent} from './010-basics/home.component';
+import {InOutUserComponent} from './010-basics/input-output.component';
+import {AdminGuard, RouterComponent} from './010-basics/router.component';
+import {TemplateDemoComponent} from './010-basics/template.component';
+import {TicTacToeComponent} from './010-basics/tictactoe.component';
+import {NgForComponent} from './020-directives/ngFor.component';
+import {NgIfComponent} from './020-directives/ngIf.component';
+import {TooltipComponent} from './020-directives/rsTooltip.directive';
+import {CustomPipeDemoComponent} from './020-directives/upper-lowercase.pipe';
+import {StyledComponent} from './020-directives/view-encapsulation.component';
+import {MyComponent} from './030-depencency-injection/di.component';
+import {CustomerFormComponent} from './040-forms/customer-form.component';
+import {CustomerRxFormComponent} from './040-forms/customer-rx-form.component';
+import {PokemonComponent, PokemonDetailComponent, PokemonListComponent} from './050-master-detail/pokemon-list.component';
+import {ObservablesComponent} from './060-observables/observables.component';
 
 const routes: Routes = [
   // Redirecting
@@ -25,6 +27,11 @@ const routes: Routes = [
   { path: 'hello-world', component: HelloWorldComponent },
   { path: 'home', component: HomeComponent },
   { path: 'template-demo', component: TemplateDemoComponent },
+  { path: 'admin', canActivate: [AdminGuard], children: [
+    // Note the use of a component-less route here
+    // (see https://angular.io/guide/router#component-less-route-grouping-routes-without-a-component)
+    { path: 'router', component: RouterComponent, data: { foo: 'bar' } },
+  ]},
   { path: 'input-output', component: InOutUserComponent },
   { path: 'tictactoe', component: TicTacToeComponent },
   { path: 'ng-for', component: NgForComponent },
@@ -46,11 +53,14 @@ const routes: Routes = [
       { path: '', component: PokemonListComponent }
     ]
   },
-  { path: 'observables', component: ObservablesComponent }
+  { path: 'observables', component: ObservablesComponent },
+  { path: 'i18n', component: InternationalizationComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  // Tip: Try enable tracing as shown below to track down routing errors
+  // (see also https://angular.io/guide/router#configuration)
+  imports: [RouterModule.forRoot(routes/*, { enableTracing: true }*/)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

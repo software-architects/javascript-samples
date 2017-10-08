@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="I18nTitle" datatype="html">
+        <source>Internationalization</source>
+        <target>Internationalisierung</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src\app\080-i18n\i18n.component.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <note priority="1" from="description">Title of I18n Demo Page</note>
+      </trans-unit>
+      <trans-unit id="I18nAbstract" datatype="html">
+        <source>
+  Eat owner&apos;s food sniff other cat&apos;s butt and hang jaw half open thereafter freak human out make funny noise mow mow mow mow
+  mow mow success now attack human, chew on cable. Where is my slave? I&apos;m getting hungry. Present belly, scratch hand when
+  stroked groom yourself 4 hours - checked, have your beauty sleep 18 hours - checked, be fabulous for the rest of the day
+  - checked. Stare at the wall, play with food and get confused by dust chase imaginary bugs. Proudly present butt to human
+  sleep nap or scratch leg; meow for can opener to feed me. Cat snacks. Chase the pig around the house paw at your fat belly
+  so pushes butt to face, jump around on couch, meow constantly until given food, shove bum in owner&apos;s face like camera lens
+  chase laser fooled again thinking the dog likes me.
+</source>
+<target>
+  Essen meines Besitzers verspeisen...
+</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src\app\080-i18n\i18n.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="I18nSvgText" datatype="html">
+        <source>I love SVG!</source>
+        <target>Ich mag SVG!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src\app\080-i18n\i18n.component.ts</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="I18nPlurals" datatype="html">
+        <source>{VAR_PLURAL, plural, =0 {no wolves} =1 {one wolf} =2 {two wolves} other {a wolf pack} }</source>
+        <target>{VAR_PLURAL, plural, =0 {keine W&ouml;lfe} =1 {ein Wolf} =2 {zwei W&ouml;lfe} other {ein Wolfsrudel} }</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src\app\080-i18n\i18n.component.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

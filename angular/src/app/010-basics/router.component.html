@@ -1,0 +1,12 @@
+<h2>ActivatedRoute</h2>
+<p>
+  <a href="https://angular.io/guide/router#activated-route">Details about <i>ActivatedRoute</i></a>
+</p>
+<ul>
+  <li>
+    <!-- Note the use of the JsonPipe (https://angular.io/api/common/JsonPipe)
+      and the AsyncPipe (https://angular.io/api/common/AsyncPipe) -->
+    <i>data</i>: {{ route.data | async | json }}
+  </li>
+  <li><i>url</i>: {{ route.url | async | json }}</li>
+</ul>

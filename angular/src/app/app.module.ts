@@ -1,3 +1,4 @@
+import { InternationalizationComponent } from './080-i18n/i18n.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -22,6 +23,7 @@ import { ObservablesComponent } from './060-observables/observables.component';
 import { CustomerRxFormComponent } from './040-forms/customer-rx-form.component';
 import { DemoModule } from './070-module/demo-module.module';
 import { TicTacToeComponent } from './010-basics/tictactoe.component';
+import { AdminGuard, RouterComponent } from './010-basics/router.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,9 @@ import { TicTacToeComponent } from './010-basics/tictactoe.component';
     PokemonComponent, PokemonListComponent, PokemonDetailComponent,
     ObservablesComponent,
     CustomerRxFormComponent,
-    TicTacToeComponent
+    TicTacToeComponent,
+    RouterComponent,
+    InternationalizationComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +61,8 @@ import { TicTacToeComponent } from './010-basics/tictactoe.component';
     AppRoutingModule
   ],
   providers: [
-    Overlay
+    Overlay,
+    AdminGuard
   ],
   bootstrap: [AppComponent]
 })
