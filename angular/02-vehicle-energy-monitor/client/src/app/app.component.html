@@ -1,0 +1,30 @@
+<div style="height: calc(100vh - 20px)">
+  <mat-toolbar color="primary" ngClass.lt-sm="toolbar-height">
+    <span>Workshop</span>
+    <span class="fill-remaining-space"></span>
+    <div fxShow fxHide.lt-sm>
+      <a routerLink="/car-makes" mat-button>Car Makes</a>
+      <a routerLink="/about" mat-button>About</a>
+    </div>
+
+    <div fxShow fxHide.gt-xs>
+      <a (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </a>
+    </div>
+  </mat-toolbar>
+
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav fxLayout="column">
+      <div fxLayout="column">
+        <a (click)="sidenav.toggle()" mat-button>Close</a>
+        <a routerLink="/car-makes" mat-button>Car Makes</a>
+        <a routerLink="/about" mat-button>About</a>
+      </div>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

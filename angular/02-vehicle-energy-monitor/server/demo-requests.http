@@ -1,0 +1,19 @@
+@host = http://localhost:8082
+
+###
+GET {{host}}/api/models HTTP/1.1
+
+###
+GET {{host}}/api/models?offset=3&fetch=3 HTTP/1.1
+
+###
+GET {{host}}/api/models?make=oyo&model=Prius HTTP/1.1
+
+###
+GET {{host}}/api/makes HTTP/1.1
+
+###
+GET {{host}}/api/makes?make=To HTTP/1.1
+
+###
+GET {{host}}/api/years HTTP/1.1

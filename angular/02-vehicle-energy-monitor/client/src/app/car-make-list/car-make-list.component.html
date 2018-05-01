@@ -1,0 +1,29 @@
+<div fxLayout="column">
+  <form [formGroup]="filterForm"  (ngSubmit)="onRefresh()" fxLayout="row wrap"
+    fxLayoutAlign="space-between center" fxLayoutGap="5px">
+    <mat-form-field fxFlex="1 1 auto">
+      <input type="number" matInput [matAutocomplete]="year" placeholder="Year" formControlName="year">
+    </mat-form-field>
+
+    <mat-autocomplete #year="matAutocomplete" (optionSelected)="onYearSelected($event)">
+      <mat-option *ngFor="let year of filteredYears | async" [value]="year">{{year}}</mat-option>
+    </mat-autocomplete>
+
+    <mat-form-field fxFlex="1 1 auto">
+      <input type="text" matInput [matAutocomplete]="make" placeholder="Make" formControlName="make">
+    </mat-form-field>
+
+    <mat-autocomplete #make="matAutocomplete">
+      <mat-option *ngFor="let make of filteredMakes | async" [value]="make">{{make}}</mat-option>
+    </mat-autocomplete>
+
+    <button type="submit" color="primary" mat-button fxFlex="0 0 auto">Search</button>
+  </form>
+  <div fxLayout="row wrap" fxLayoutGap="5px">
+    <mat-card *ngFor="let model of filteredModels | async" ngClass.gt-sm="large-card" ngClass.lt-sm="small-card">
+      <mat-card-title ngClass.lt-md="smaller-font">{{ model.make }}</mat-card-title>
+      <img mat-card-image src="/assets/car2.svg" fxHide.lt-sm />
+      <mat-card-content ngClass.lt-sm="smallest-font">{{ model.model }}<br/>({{ model.year }})</mat-card-content>
+    </mat-card>
+  </div>
+</div>
