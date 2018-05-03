@@ -54,8 +54,8 @@ export class ModelsController implements interfaces.Controller {
     }
 
     const query = this.dal.buildQuery({
-      select: ['id', 'year', 'make', 'model'],
-      from: 'VehicleModelYear',
+      select: ['v.id', 'v.year', 'v.make', 'v.model', 'case when d.id is null then 0 else 1 end as hasDetails'],
+      from: 'VehicleModelYear v left join VehicleModelDetails d on v.id = d.id',
       where: filters,
       orderBy: ['year', 'make', 'model'],
       offset: offset,

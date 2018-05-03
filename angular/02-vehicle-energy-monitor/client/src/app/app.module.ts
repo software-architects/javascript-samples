@@ -24,9 +24,10 @@ import { CarMakeListComponent } from './car-make-list/car-make-list.component';
 import { LoremIpsumService } from './lorem-ipsum.service';
 import { LoremIpsumComponent } from './lorem-ipsum/lorem-ipsum.component';
 import { UrlBuilderServiceProvider } from './url-builder-service/url-builder.upgraded-service';
+import { CarModelDetailsComponent } from './car-model-details/car-model-details.component';
 
 @NgModule({
-  declarations: [AppComponent, LoremIpsumComponent, CarMakeListComponent],
+  declarations: [AppComponent, LoremIpsumComponent, CarMakeListComponent, CarModelDetailsComponent],
   imports: [
     BrowserModule, AppRoutingModule,
     ServiceWorkerModule.register(

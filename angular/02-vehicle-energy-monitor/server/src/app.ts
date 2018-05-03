@@ -2,6 +2,8 @@ import 'reflect-metadata';
 import './controllers/models-controller';
 import './controllers/makes-controller';
 import './controllers/years-controller';
+import './controllers/fuel-types-controller';
+import './controllers/model-details';
 
 import * as bodyParser from 'body-parser';
 import * as cors from 'cors';

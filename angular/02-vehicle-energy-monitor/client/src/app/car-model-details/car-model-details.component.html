@@ -1,0 +1,65 @@
+<form [formGroup]="detailsForm" fxLayout="column">
+  <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+    <mat-form-field fxFlex="1 1 auto">
+      <input type="text" matInput placeholder="Make" formControlName="make">
+    </mat-form-field>
+
+    <mat-form-field fxFlex="1 1 auto">
+      <input type="text" matInput placeholder="Model" formControlName="model">
+    </mat-form-field>
+
+    <mat-form-field fxFlex="0 0 auto">
+      <input type="number" matInput placeholder="Year" formControlName="year">
+    </mat-form-field>
+  </div>
+
+  <div fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutGap="10px">
+    <mat-form-field>
+      <input type="number" matInput placeholder="Fuel Type" formControlName="fuelType">
+    </mat-form-field>
+
+    <mat-form-field fxFlexFill>
+      <input type="text" matInput placeholder="Engine" formControlName="engine">
+    </mat-form-field>
+  </div>
+
+  <div fxLayout="row wrap" fxLayoutGap="10px">
+    <mat-form-field>
+      <input type="number" matInput placeholder="Doors" formControlName="doors">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input type="number" matInput placeholder="Max. Power (HP)" formControlName="maxPower_HP">
+      <div style="color: red" [hidden]="!detailsForm.controls.maxPower_HP.errors">
+        Invalid input!
+      </div>
+      {{ detailsForm.controls.maxPower_HP.errors | json}}
+    </mat-form-field>
+
+    <mat-form-field>
+      <input type="number" matInput placeholder="Max. Speed (KM/h)" formControlName="maxSpeed_KM_h">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input type="number" matInput placeholder="Acceleration 0-100 KM/h (s)" formControlName="acceleration0to100KMh_s">
+    </mat-form-field>
+
+    <mat-form-field [fxHide]="detailsForm.controls.fuelType.value == 1">
+      <input type="number" matInput placeholder="Fuel Tank Volume (l)" formControlName="fuelTankVolume_L">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input type="number" matInput placeholder="Max Torque (Nm)" formControlName="maxTorque_Nm">
+    </mat-form-field>
+
+    <mat-form-field [fxHide]="detailsForm.controls.fuelType.value == 1">
+      <input type="number" matInput placeholder="Cylinders" formControlName="cylinders">
+    </mat-form-field>
+
+    <mat-form-field [fxHide]="detailsForm.controls.fuelType.value == 1">
+      <input type="number" matInput placeholder="CO2 Emission (g/km)" formControlName="co2emissionMax_g_km">
+    </mat-form-field>
+  </div>
+
+  <button mat-button type="submit" [disabled]="detailsForm.invalid">Save</button>
+</form>

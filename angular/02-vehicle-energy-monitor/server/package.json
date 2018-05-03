@@ -4,9 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && copy package.json dist",
     "watch": "tsc --watch",
     "start": "node ./dist/app.js"
+  },
+  "engines": {
+    "node": "8.9.0"
   },
   "author": "",
   "license": "ISC",
