@@ -5,9 +5,10 @@
   "main": "promises-intro.js",
   "dependencies": {},
   "devDependencies": {
-    "@types/node": "^7.0.12"
+    "@types/node": "^10.1.2",
+    "typescript": "^2.8.3"
   },
-  "scripts": { },
+  "scripts": {},
   "author": "Rainer Stropek",
   "license": "MIT"
 }
