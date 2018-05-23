@@ -1,0 +1,21 @@
+{
+  "name": "async",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/app.js",
+  "scripts": {
+    "start": "concurrently \"tsc --watch\" \"nodemon -w ./dist app.js\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^3.1.0-beta4",
+    "rxjs": "^6.2.0"
+  },
+  "devDependencies": {
+    "@types/mongodb": "^3.0.18",
+    "concurrently": "^3.5.1",
+    "nodemon": "^1.17.4",
+    "typescript": "^2.8.3"
+  }
+}

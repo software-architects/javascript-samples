@@ -1,0 +1,255 @@
+{
+	"Techorama Interfaces": {
+		"scope": "typescript",
+		"prefix": "te-inter",
+		"body": [
+			"interface IPerson {",
+			"  _id: any;",
+			"  firstName: string;",
+			"  lastName: string;",
+			"  isCustomer: boolean;",
+			"  customerId: any;",
+			"  supplierId: any;",
+			"}",
+			"",
+			"interface ICustomer {",
+			"  _id: any;",
+			"  customerName: string;",
+			"}",
+			"",
+			"interface ISupplier {",
+			"  _id: any;",
+			"  supplierName: string;",
+			"}",
+			"",
+			"$0"
+		],
+		"description": "Techorama 2018 - Create interfaces"
+	},
+	"Techorama mongoDB Connect": {
+		"scope": "typescript",
+		"prefix": "te-connect",
+		"body": [
+			"(() => {",
+			"  MongoClient.connect('mongodb://localhost:27017',",
+			"    <MongoClientOptions>{ useNewUrlParser: true }, (err, client) => {",
+			"    // TODO: Error handling; not in scope of this presentation",
+			"    const db = client.db('demo');",
+			"",
+			"    $0",
+			"  });",
+			"})();"
+		],
+		"description": "Techorama 2018 - mongoDB connect"
+	},
+	"Techorama mongoDB Collection": {
+		"scope": "typescript",
+		"prefix": "te-coll",
+		"body": [
+			"db.collection('$1', (_, $1Coll) => {",
+			"  $0",
+			"});"
+		],
+		"description": "Techorama 2018 - mongoDB collection"
+	},
+	"Techorama mongoDB find": {
+		"scope": "typescript",
+		"prefix": "te-find",
+		"body": [
+			"$1Coll.find({ firstName: '$2' }).toArray((_, $1s: I$3[]) => {",
+			"  $0",
+			"});"
+		],
+		"description": "Techorama 2018 - mongoDB find"
+	},
+	"Techorama Customer Loop": {
+		"scope": "typescript",
+		"prefix": "te-cust-loop",
+		"body": [
+			"for (const p of persons) {",
+			"  if (p.isCustomer) {",
+			"    $0",
+			"  } else {",
+			"",
+			"  }",
+			"}"
+		],
+		"description": "Techorama 2018 - Customer Loop"
+	},
+	"Techorama Close": {
+		"scope": "typescript",
+		"prefix": "te-close",
+		"body": [
+			"let counter = persons.length;",
+			"const close = () => { if (--counter == 0) client.close(); };"
+		],
+		"description": "Techorama 2018 - Customer Close"
+	},
+	"Techorama Find and Print": {
+		"scope": "typescript",
+		"prefix": "te-find-print",
+		"body": [
+			"$1Coll.findOne(p.$1Id, (_, $1: I$2) => {",
+			"  console.log(`${p.firstName} ${p.lastName} works at ${$1.$1Name}`);",
+			"  close();",
+			"});"
+		],
+		"description": "Techorama 2018 - Find and Print"
+	},
+	"Techorama Async connect": {
+		"scope": "typescript",
+		"prefix": "te-async-connect",
+		"body": [
+			"(() => {",
+			"  async function run() {",
+			"    const client = await MongoClient.connect('mongodb://localhost:27017',",
+			"      <MongoClientOptions>{ useNewUrlParser: true });",
+			"    const db = client.db('demo');",
+			"    $0",
+			"",
+			"    await client.close();",
+			"  }",
+			"",
+			"  run();",
+			"})();"
+		],
+		"description": "Techorama 2018 - Async Connection"
+	},
+	"Techorama Async Collection": {
+		"scope": "typescript",
+		"prefix": "te-async-coll",
+		"body": [
+			"const $1Coll = await db.collection('$1');"
+		],
+		"description": "Techorama 2018 - Async Collection"
+	},
+	"Techorama mongoDB async find": {
+		"scope": "typescript",
+		"prefix": "te-async-find",
+		"body": [
+			"const $1s = <I$3[]>await $1Coll.find({ firstName: '$2' }).toArray();"
+		],
+		"description": "Techorama 2018 - mongoDB Async find"
+	},
+	"Techorama Async Find and Print": {
+		"scope": "typescript",
+		"prefix": "te-async-find-print",
+		"body": [
+			"const $1 = await $1Coll.findOne(p.$1Id);",
+            "console.log(`${p.firstName} ${p.lastName} works at ${$1.$1Name}`);"
+		],
+		"description": "Techorama 2018 - Async Find and Print"
+	},
+	"Techorama Promises start": {
+		"scope": "typescript",
+		"prefix": "te-prom-start",
+		"body": [
+			"// Very basic function to start with",
+			"function div(x: number, y: number): number {",
+			"  return x / y;",
+			"}",
+			"",
+			"// Let's simulate a complex, async implementation",
+			"function divAsync(x: number, y: number): Promise<number> {",
+			"  return new Promise((res, rej) => {",
+			"    // Simulate some think time (e.g. web api call)",
+			"    setTimeout(() => {",
+			"      if (y !== 0) res(x / y);",
+			"      else rej(\"Div by zero\");",
+			"    }, 250);",
+			"  });",
+			"}"
+		]
+	},
+	"Techorama Rx basics": {
+		"scope": "typescript",
+		"prefix": "te-rx-basics",
+		"body": [
+			"// The basics",
+			"(function () {",
+			"  var observable = Observable.create(function (observer) {",
+			"    observer.next(1);",
+			"    observer.next(2);",
+			"    observer.next(3);",
+			"    setTimeout(() => {",
+			"      observer.next(4);",
+			"      // observer.error(\"ERROR\");",
+			"      observer.next(5);",
+			"      observer.complete();",
+			"    }, 1000);",
+			"  });",
+			"",
+			"  console.log('just before subscribe');",
+			"  observable.subscribe({",
+			"    next: x => console.log('got value ' + x),",
+			"    error: err => console.error('something wrong occurred: ' + err),",
+			"    complete: () => console.log('done'),",
+			"  });",
+			"  console.log('just after subscribe');",
+			"})();"
+		]
+	},
+	"Techorama Rx create": {
+		"scope": "typescript",
+		"prefix": "te-rx-create",
+		"body": [
+			"// Samples for creating observables",
+			"(function () {",
+			"  of(1, 2, 3).forEach(v => console.log(v));",
+			"  range(1, 3).forEach(v => console.log(v));",
+			"",
+			"  timer(1000, 0).pipe(take(3)).forEach(v => console.log(v + 1))",
+			"    .then(_ => console.log(\"Done!\"));",
+			"})();"
+		]
+	},
+	"Techorama Rx subscribe": {
+		"scope": "typescript",
+		"prefix": "te-rx-subscribe",
+		"body": [
+			"// Subscribing and unsubscribing",
+			"(function () {",
+			"  const subscription = interval(250).subscribe(v => console.log(v));",
+			"  console.log(subscription.closed);",
+			"  setTimeout(() => {",
+			"    subscription.unsubscribe();",
+			"    console.log(subscription.closed);",
+			"  }, 1000);",
+			"})();"
+		]
+	},
+	"Techorama Rx combine": {
+		"scope": "typescript",
+		"prefix": "te-rx-combine",
+		"body": [
+			"// Combining observables",
+			"(function () {",
+			"  const o1 = of(1, 2);",
+			"  const o2 = of(3, 4);",
+			"  const o3 = o1.pipe(concat(o2));",
+			"  o3.forEach(v => console.log(v));",
+			"",
+			"  // Try `concat` and `merge` with async code...",
+			"  const asyncO1 = interval(1000).pipe(map(v => v + 1), take(3));",
+			"  const asyncO2 = interval(2000).pipe(map(v => (v + 1) * 10), take(3));",
+			"  const asyncO3 = asyncO1.pipe(concat(asyncO2));",
+			"  asyncO3.forEach(v => console.log(v));",
+			"})();"
+		]
+	},
+	"Techorama Rx error": {
+		"scope": "typescript",
+		"prefix": "te-rx-error",
+		"body": [
+			"// Error handling",
+			"(function () {",
+			"  const o = of(1, 2).pipe(concat(",
+			"    throwError(new Error(\"Something happened...\"))));",
+			"  o.subscribe(",
+			"    v => console.log(v),",
+			"    err => console.log(`ERROR: ${err.message}`));",
+			"})();"
+		]
+	}
+
+}
