@@ -1,0 +1,15 @@
+<div fxLayout="column">
+  <form [formGroup]="filterForm" fxLayout="row wrap"
+    fxLayoutAlign="space-between center" fxLayoutGap="5px">
+
+    <mat-form-field fxFlex="1 1 auto">
+      <input type="text" matInput [matAutocomplete]="make" placeholder="Make" formControlName="make">
+    </mat-form-field>
+
+    <mat-autocomplete #make="matAutocomplete">
+      <mat-option *ngFor="let make of filteredMakes | async" [value]="make">{{make}}</mat-option>
+    </mat-autocomplete>
+
+    <button type="submit" color="primary" mat-button fxFlex="0 0 auto">Search</button>
+  </form>
+</div>

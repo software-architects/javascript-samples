@@ -1,0 +1,11 @@
+.fill-remaining-space {
+    flex: 1 1 auto;
+}
+
+.toolbar-height {
+    height: 64px;
+}
+
+mat-toolbar {
+    margin-bottom: 10px;
+}
