@@ -1,0 +1,47 @@
+@import '../colors.scss';
+
+.angleCircle {
+  stroke: $primary-darker;
+  stroke-width: 1;
+  fill: $primary-lighter;
+}
+
+.angleGauge {
+  fill: $secondary;
+  fill-opacity: 0.20;
+}
+
+.angleLine {
+  stroke: $primary-dark;
+  stroke-width: 1;
+  stroke-linecap: round;
+  pointer-events: none;
+}
+
+.angleMarks {
+  stroke: $complement-darker;
+  stroke-width: 1;
+  stroke-opacity: 0.5;
+}
+
+.angleDragHandle {
+  stroke: $primary-dark;
+  stroke-width: 5;
+  stroke-opacity: 0.25;
+  fill: white;
+  cursor: pointer;
+}
+
+.angleDragArrow {
+  pointer-events: none;
+}
+
+.angleCenterPoint {
+  stroke: $primary-darker;
+  stroke-width: 1;
+  fill: $primary-darker;
+}
+
+.angleArrow {
+  fill: $primary-darker;
+}

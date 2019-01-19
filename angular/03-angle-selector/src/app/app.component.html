@@ -1,0 +1,22 @@
+
+<div fxLayout='column'>
+  <div fxLayout='row' class="menu-bar">
+    <button mat-icon-button [matMenuTriggerFor]="appMenu">
+      Angle Selector
+    </button>
+    <mat-menu #appMenu="matMenu">
+      <button mat-menu-item [matMenuTriggerFor]="multiLevelMenu">Multi-Level</button>
+      <a routerLink='static' mat-menu-item>Step 1: Static HTML</a>
+      <a routerLink='basic' mat-menu-item>Step 2: Basic Component</a>
+      <a routerLink='pointer' mat-menu-item>Step 3: With Pointer</a>
+    </mat-menu>
+    <mat-menu #multiLevelMenu="matMenu">
+        <a routerLink='multi' mat-menu-item>Level 1</a>
+        <a routerLink='multi/child' mat-menu-item>Level 2</a>
+      </mat-menu>
+    </div>
+
+  <app-breadcrumb></app-breadcrumb>
+
+  <router-outlet></router-outlet>
+</div>

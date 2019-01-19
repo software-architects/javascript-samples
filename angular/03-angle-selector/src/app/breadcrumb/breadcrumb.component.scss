@@ -1,0 +1,29 @@
+@import '../../colors.scss';
+
+ul {
+  list-style: none;
+  padding: 5px;
+}
+
+/* Display list items side by side */
+ul li {
+  display: inline;
+}
+
+/* Add a separator symbol (/) before/behind each list item */
+ul li+li:before {
+  padding: 8px;
+  content: "|";
+}
+
+/* Add a color to all links inside the list */
+ul li a {
+  color: $complement-lighter;
+  text-decoration: none;
+}
+
+/* Add a color on mouse-over */
+ul li a:hover {
+  color: $complement-light;
+  text-decoration: underline;
+}

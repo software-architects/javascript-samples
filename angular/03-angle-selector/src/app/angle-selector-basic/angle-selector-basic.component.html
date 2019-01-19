@@ -1,0 +1,45 @@
+<svg height="120px" width="120px">
+  <!-- Outer circle -->
+  <circle cx="60" cy="60" r="47" class="angleCircle"></circle>
+
+  <!-- Arc indicating selected angle. Positiv from 0 to 180 deg., negative from -181 to 359 deg. -->
+  <path class="angleGauge" attr.d="M 60,60 l 0,-47 A 47,47 0 0 {{this.clockwise ? 1 : 0}} {{this.arrowPositionX}},{{this.arrowPositionY}} z"></path>
+  <line x1="60" y1="60" x2="60" y2="13" class="angleLine"></line>
+  <line x1="60" y1="60" [attr.x2]="arrowPositionX" [attr.y2]="arrowPositionY" class="angleLine"></line>
+
+  <!-- Angle marks (every 15 deg.) -->
+  <line x1="94" y1="60" x2="100" y2="60" class="angleMarks" transform="rotate(0,60,60)"></line>
+  <line x1="94" y1="60" x2="100" y2="60" class="angleMarks" transform="rotate(15,60,60)"></line>
+  <line x1="94" y1="60" x2="100" y2="60" class="angleMarks" transform="rotate(30,60,60)"></line>
+  <line x1="94" y1="60" x2="100" y2="60" class="angleMarks" transform="rotate(45,60,60)"></line>
+  <line x1="94" y1="60" x2="100" y2="60" class="angleMarks" transform="rotate(60,60,60)"></line>
+  <line x1="94" y1="60" x2="100" y2="60" class="angleMarks" transform="rotate(75,60,60)"></line>
+  <line x1="94" y1="60" x2="100" y2="60" class="angleMarks" transform="rotate(90,60,60)"></line>
+  <line x1="94" y1="60" x2="100" y2="60" class="angleMarks" transform="rotate(105,60,60)"></line>
+  <line x1="94" y1="60" x2="100" y2="60" class="angleMarks" transform="rotate(120,60,60)"></line>
+  <line x1="94" y1="60" x2="100" y2="60" class="angleMarks" transform="rotate(135,60,60)"></line>
+  <line x1="94" y1="60" x2="100" y2="60" class="angleMarks" transform="rotate(150,60,60)"></line>
+  <line x1="94" y1="60" x2="100" y2="60" class="angleMarks" transform="rotate(165,60,60)"></line>
+  <line x1="94" y1="60" x2="100" y2="60" class="angleMarks" transform="rotate(180,60,60)"></line>
+  <line x1="94" y1="60" x2="100" y2="60" class="angleMarks" transform="rotate(195,60,60)"></line>
+  <line x1="94" y1="60" x2="100" y2="60" class="angleMarks" transform="rotate(210,60,60)"></line>
+  <line x1="94" y1="60" x2="100" y2="60" class="angleMarks" transform="rotate(225,60,60)"></line>
+  <line x1="94" y1="60" x2="100" y2="60" class="angleMarks" transform="rotate(240,60,60)"></line>
+  <line x1="94" y1="60" x2="100" y2="60" class="angleMarks" transform="rotate(255,60,60)"></line>
+  <line x1="94" y1="60" x2="100" y2="60" class="angleMarks" transform="rotate(270,60,60)"></line>
+  <line x1="94" y1="60" x2="100" y2="60" class="angleMarks" transform="rotate(285,60,60)"></line>
+  <line x1="94" y1="60" x2="100" y2="60" class="angleMarks" transform="rotate(300,60,60)"></line>
+  <line x1="94" y1="60" x2="100" y2="60" class="angleMarks" transform="rotate(315,60,60)"></line>
+  <line x1="94" y1="60" x2="100" y2="60" class="angleMarks" transform="rotate(330,60,60)"></line>
+  <line x1="94" y1="60" x2="100" y2="60" class="angleMarks" transform="rotate(345,60,60)"></line>
+
+  <!-- Center point -->
+  <circle cx="60" cy="60" r="2" class="angleCenterPoint"></circle>
+
+  <!-- Drag-handle with arrow -->
+  <g attr.transform="translate({{this.arrowPositionX}},{{this.arrowPositionY}})">
+    <circle cx="0" cy="0" r="10" class="angleDragHandle"></circle>
+    <path class="angleArrow" attr.transform="rotate({{this.angle}})"
+      d="m -1.4986425,-0.01730154 0.84222698,4.52460094 c 0.0490883,0.264 0.34260648,0.4927 0.65203938,0.4927 0.30046721,0 0.60138259,-0.2206 0.65203979,-0.4927 l 0.84222645,-4.52460094 1.8712787,0 c 0.6096762,0 0.8219415,-0.3656 0.4575937,-0.81659996 L 0.73149402,-4.6554006 c -0.37062453,-0.4587 -0.96102432,-0.4563 -1.33254559,-0.012 l -3.21357453,3.8448991 c -0.3735385,0.44709996 -0.1723679,0.80489996 0.4447047,0.80489996 l 1.8712789,0 z"></path>
+  </g>
+</svg>

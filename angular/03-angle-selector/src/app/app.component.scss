@@ -1,0 +1,11 @@
+@import '../colors.scss';
+
+.menu-bar {
+  background-color: $complement;
+  padding: 10px;
+  color: $complement-foreground;
+}
+
+router-outlet {
+  margin-top: 25px;
+}
