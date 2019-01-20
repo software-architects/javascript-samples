@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AngleSelectorStaticComponent } from './angle-selector-static/angle-selector-static.component';
 import { MultiLevelRouterComponent, MultiLevelRouterChildComponent } from './multi-level-router/multi-level-router.component';
-import { AngleSelectorBasicHostComponent } from './angle-selector-basic/angle-selector-basic.component';
-import { AngleSelectorPointerHostComponent } from './angle-selector-pointer/angle-selector-pointer.component';
+import { AngleSelectorStaticComponent } from './angle-selector/angle-selector-static/angle-selector-static.component';
+import { AngleSelectorBasicHostComponent } from './angle-selector/angle-selector-basic/angle-selector-basic.component';
+import { AngleSelectorPointerHostComponent } from './angle-selector/angle-selector-pointer/angle-selector-pointer.component';
+import { AngleSelectorPopperComponent } from './angle-selector/angle-selector-popper/angle-selector-popper.component';
 
 const routes: Routes = [
   { path: 'static', component: AngleSelectorStaticComponent, data: { breadcrumb: 'Static HTML/CSS' } },
   { path: 'basic', component: AngleSelectorBasicHostComponent, data: { breadcrumb: 'Basic Component' } },
   { path: 'pointer', component: AngleSelectorPointerHostComponent, data: { breadcrumb: 'With Pointer' } },
+  { path: 'popper', component: AngleSelectorPopperComponent, data: { breadcrumb: 'With Popper' } },
   {
     path: 'multi',
     component: MultiLevelRouterComponent,

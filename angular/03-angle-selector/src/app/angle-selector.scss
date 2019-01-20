@@ -45,3 +45,12 @@
 .angleArrow {
   fill: $primary-darker;
 }
+
+div.ngxp__container.angle-select-popup {
+  background-color: $primary;
+  border: $primary-dark;
+}
+
+div.ngxp__container .angle-select-arrow {
+  border-color: $primary-dark;
+}

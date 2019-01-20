@@ -19,7 +19,7 @@ export class AngleSelectorPointerHostComponent {
   templateUrl: './angle-selector-pointer.component.html',
   styleUrls: ['./angle-selector-pointer.component.scss']
 })
-export class AngleSelectorPointerComponent implements AfterViewInit {
+export class AngleSelectorPointerComponent {
   private isDragging = false;
 
   get clockwise() {
@@ -62,14 +62,11 @@ export class AngleSelectorPointerComponent implements AfterViewInit {
   constructor() {
   }
 
-  ngAfterViewInit(): void {
+  public startDrag(event: PointerEvent): void {
+    this.isDragging = true;
     const centerClientRect = this.centerNativeElement.getBoundingClientRect();
     this.centerCoord.x = centerClientRect.left + centerClientRect.width / 2;
     this.centerCoord.y = centerClientRect.top + centerClientRect.height / 2;
-  }
-
-  public startDrag(event: PointerEvent): void {
-    this.isDragging = true;
     this.dragHandleNativeElement.setPointerCapture(event.pointerId);
   }
 

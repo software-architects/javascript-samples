@@ -1,0 +1,11 @@
+<div fxLayout="column">
+  <mat-form-field class="example-full-width" id="angle-form-field"  [popper]="visualAngleSelector"
+  [popperPlacement]="'right'" popperApplyClass="angle-select-popup" popperApplyArrowClass="angle-select-arrow">
+    <input matInput type="number" placeholder="Angle" value="90" [(ngModel)]="angle"
+      max="180" min="-180" (focus)="visualAngleSelector.show()">
+  </mat-form-field>
+</div>
+
+<popper-content #visualAngleSelector>
+  <app-angle-selector-pointer [(angle)]="angle"></app-angle-selector-pointer>
+</popper-content>

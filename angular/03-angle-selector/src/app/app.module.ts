@@ -6,33 +6,27 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModules } from './material-modules';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AngleSelectorStaticComponent } from './angle-selector-static/angle-selector-static.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { MultiLevelRouterComponent, MultiLevelRouterChildComponent } from './multi-level-router/multi-level-router.component';
-import { AngleSelectorBasicComponent, AngleSelectorBasicHostComponent } from './angle-selector-basic/angle-selector-basic.component';
 import { CustomErrorHandler } from './error-handler';
 import { FormsModule } from '@angular/forms';
-import { AngleSelectorPointerComponent, AngleSelectorPointerHostComponent } from './angle-selector-pointer/angle-selector-pointer.component';
+import { AngleSelectorModule } from './angle-selector/angle-selector.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AngleSelectorStaticComponent,
     BreadcrumbComponent,
     MultiLevelRouterComponent,
-    MultiLevelRouterChildComponent,
-    AngleSelectorBasicComponent,
-    AngleSelectorBasicHostComponent,
-    AngleSelectorPointerComponent,
-    AngleSelectorPointerHostComponent
+    MultiLevelRouterChildComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    AppRoutingModule,
     FormsModule,
-    ...MaterialModules
+    ...MaterialModules,
+    AppRoutingModule,
+    AngleSelectorModule
   ],
   providers: [
     { provide: ErrorHandler, useClass: CustomErrorHandler }],
