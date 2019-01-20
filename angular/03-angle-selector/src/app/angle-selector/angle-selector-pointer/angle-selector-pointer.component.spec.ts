@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import {By} from '@angular/platform-browser';
 
 import { AngleSelectorPointerComponent } from './angle-selector-pointer.component';
 import { DebugElement } from '@angular/core';
@@ -7,9 +6,9 @@ import { DebugElement } from '@angular/core';
 describe('AngleSelectorPointerComponent', () => {
   let component: AngleSelectorPointerComponent;
   let fixture: ComponentFixture<AngleSelectorPointerComponent>;
-  let de: DebugElement;
-  let dragHandleNativeElement: SVGElement;
-  let centerNativeElement: SVGElement;
+  let ne: SVGElement;
+  let dragHandleNe: SVGElement;
+  let centerNe: SVGElement;
   const center = { x: 0, y: 0};
 
   beforeEach(async(() => {
@@ -23,11 +22,11 @@ describe('AngleSelectorPointerComponent', () => {
     fixture = TestBed.createComponent(AngleSelectorPointerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-    de = fixture.debugElement;
+    ne = fixture.debugElement.nativeElement;
 
-    dragHandleNativeElement = <SVGElement>de.nativeElement.querySelector('#drag-handle');
-    centerNativeElement = <SVGElement>de.nativeElement.querySelector('#center');
-    const centerBounding = centerNativeElement.getBoundingClientRect();
+    dragHandleNe = ne.querySelector('#drag-handle');
+    centerNe = ne.querySelector('#center');
+    const centerBounding = centerNe.getBoundingClientRect();
     center.x = centerBounding.left + centerBounding.width / 2;
     center.y = centerBounding.top + centerBounding.height / 2;
   });
@@ -38,9 +37,9 @@ describe('AngleSelectorPointerComponent', () => {
 
   it('changes angle on mouse move', () => {
     component.angle = 0;
-    dragHandleNativeElement.dispatchEvent(new PointerEvent('pointerdown', { pointerId: 1 }));
-    de.nativeElement.dispatchEvent(new PointerEvent('pointermove', { clientX: center.x + 10, clientY: center.y }));
-    de.nativeElement.dispatchEvent(new PointerEvent('pointerup', { pointerId: 1 }));
+    dragHandleNe.dispatchEvent(new PointerEvent('pointerdown', { pointerId: 1 }));
+    ne.dispatchEvent(new PointerEvent('pointermove', { clientX: center.x + 10, clientY: center.y }));
+    ne.dispatchEvent(new PointerEvent('pointerup', { pointerId: 1 }));
 
     expect(component.angle).toBe(90);
   });
