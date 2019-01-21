@@ -11,6 +11,7 @@ import { MultiLevelRouterComponent, MultiLevelRouterChildComponent } from './mul
 import { CustomErrorHandler } from './error-handler';
 import { FormsModule } from '@angular/forms';
 import { AngleSelectorModule } from './angle-selector/angle-selector.module';
+import { ChildRoutingModule } from './multi-level-router/child-routing.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { AngleSelectorModule } from './angle-selector/angle-selector.module';
     FormsModule,
     ...MaterialModules,
     AppRoutingModule,
-    AngleSelectorModule
+    AngleSelectorModule,
+    ChildRoutingModule
   ],
   providers: [
     { provide: ErrorHandler, useClass: CustomErrorHandler }],
