@@ -87,3 +87,14 @@ The next version of our component should allow the user to manipulate the angle 
 * Add an *input* and an [output binding](https://angular.io/guide/component-interaction#parent-listens-for-child-event) for the maintenance of the *angle* value.
   * Speak about [custom two-way binding](https://angular.io/guide/template-syntax#two-way-binding---).
   * Describe *input* binding [to a setter](https://angular.io/guide/component-interaction#intercept-input-property-changes-with-a-setter) vs. [`OnChanges`](https://angular.io/guide/lifecycle-hooks#onchanges).
+
+* Add [drag-and-drop logic](src/app/angle-selector/angle-selector-pointer/angle-selector-pointer.component.ts).
+  * Describe [`@ViewChild`](https://angular.io/guide/component-interaction#parent-calls-an-viewchild) and [`ElementRef`](https://angular.io/guide/glossary#element).
+  * Speak about [`@HostListener`](https://angular.io/guide/attribute-directives#respond-to-user-initiated-events).
+
+* Add a test component [*AngleSelectorPointerHostComponent*](src/app/angle-selector/angle-selector-pointer/angle-selector-pointer.component.ts) where the user can enter an angle in an [`input`](https://material.angular.io/components/input/overview) and that angle is two-way-bound to our component's input/output.
+
+* Implement [automated tests](src/app/angle-selector/angle-selector-pointer/angle-selector-pointer.component.spec.ts) for the component.
+  * Describe [`DebugElement`](https://angular.io/guide/testing#debugelement)
+  * Describe [`dispatchEvent`](https://angular.io/guide/testing#change-an-input-value-with-dispatchevent)
+
