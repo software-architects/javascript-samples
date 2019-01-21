@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { filter, distinctUntilChanged, map, tap } from 'rxjs/operators';
+import { filter, distinctUntilChanged, map } from 'rxjs/operators';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 
 export interface BreadCrumb {
@@ -13,7 +13,7 @@ export interface BreadCrumb {
   templateUrl: './breadcrumb.component.html',
   styleUrls: ['./breadcrumb.component.scss']
 })
-export class BreadcrumbComponent implements OnInit {
+export class BreadcrumbComponent {
   public breadcrumbs: Observable<BreadCrumb[]>;
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {
@@ -41,8 +41,5 @@ export class BreadcrumbComponent implements OnInit {
     }
 
     return newBreadcrumbs;
-  }
-
-  ngOnInit() {
   }
 }

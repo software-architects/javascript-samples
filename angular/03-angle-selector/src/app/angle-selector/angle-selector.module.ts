@@ -7,10 +7,11 @@ import {
   AngleSelectorPointerHostComponent
 } from './angle-selector-pointer/angle-selector-pointer.component';
 import { FormsModule } from '@angular/forms';
-import { MatFormFieldModule, MatInputModule } from '@angular/material';
+import { MatFormFieldModule, MatInputModule, MatIconModule, MatButtonModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AngleSelectorPopperComponent } from './angle-selector-popper/angle-selector-popper.component';
 import { NgxPopperModule } from 'ngx-popper';
+import { SpeedupAngleChangerDirective, SpeedupAngleChangerHostDirective } from './speedup-angle-changer.directive';
 
 @NgModule({
   declarations: [
@@ -19,13 +20,17 @@ import { NgxPopperModule } from 'ngx-popper';
     AngleSelectorBasicHostComponent,
     AngleSelectorPointerComponent,
     AngleSelectorPointerHostComponent,
-    AngleSelectorPopperComponent
+    AngleSelectorPopperComponent,
+    SpeedupAngleChangerDirective,
+    SpeedupAngleChangerHostDirective
   ],
   imports: [
     CommonModule,
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatIconModule,
+    MatButtonModule,
     FlexLayoutModule,
     NgxPopperModule
   ],
@@ -35,7 +40,9 @@ import { NgxPopperModule } from 'ngx-popper';
     AngleSelectorBasicHostComponent,
     AngleSelectorPointerComponent,
     AngleSelectorPointerHostComponent,
-    AngleSelectorPopperComponent
+    AngleSelectorPopperComponent,
+    SpeedupAngleChangerDirective,
+    SpeedupAngleChangerHostDirective
   ]
 })
 export class AngleSelectorModule { }
