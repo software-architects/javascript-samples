@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Pipe, PipeTransform } from '@angular/core';
 
 @Component({
   template: `
@@ -11,6 +11,14 @@ import { Component, Input } from '@angular/core';
 })
 export class AngleSelectorBasicHostComponent {
   angle = 90;
+}
+
+// We could use a pipe in the template to turn angles into SVG translations
+@Pipe({name: 'rotate'})
+export class RotatePipe implements PipeTransform {
+  transform(angle: number): string {
+    return `rotate(${angle})`;
+  }
 }
 
 @Component({
