@@ -1,0 +1,29 @@
+div {
+  display: inline;
+}
+
+.kpi {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 48px;
+}
+
+.uom {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+}
+
+svg {
+  width: 25px;
+  height: 25px;
+}
+
+path.liked {
+  stroke: red;
+  fill: red;
+}
+
+path {
+  stroke: lightgray;
+  stroke-width: 100px;
+  fill: lightgray;
+}
